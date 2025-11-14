@@ -13,6 +13,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Azulita Holistics | Natural Healing & Wellness",
   description: "Professional homeopathy, reiki, and holistic healing services",
+  icons: {
+    icon: "/azulita.svg",
+  },
 };
 
 export default function RootLayout({
