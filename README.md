@@ -2,11 +2,13 @@
 
 A bilingual (English/Spanish) website for a holistic healing practice.
 
-## For Editing Content
+## Documentation
 
 📝 **[How to Edit Website Copy](./docs/EDITING_COPY.md)** - Change text on any page
 
 🎨 **[How to Edit Visual Styles](./docs/EDITING_STYLES.md)** - Change colors, fonts, spacing
+
+🏠 **[Architecture Guide](./docs/ARCHITECTURE.md)** - Understand how the website works
 
 ## Quick Start
 
