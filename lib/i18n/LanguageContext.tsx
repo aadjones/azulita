@@ -16,19 +16,25 @@ interface LanguageProviderProps {
 }
 
 export function LanguageProvider({ children, initialLanguage = 'en' }: LanguageProviderProps) {
-  // Load language preference from localStorage during initialization
-  const getInitialLanguage = (): Language => {
-    if (typeof window === 'undefined') return initialLanguage;
-    const stored = localStorage.getItem('language') as Language | null;
-    return (stored === 'en' || stored === 'es') ? stored : initialLanguage;
-  };
+  // Initialize with the route-based language (server-safe)
+  const [language, setLanguageState] = useState<Language>(initialLanguage);
+  const [isClient, setIsClient] = useState(false);
 
-  const [language, setLanguageState] = useState<Language>(getInitialLanguage);
+  // After hydration, check localStorage preference
+  React.useEffect(() => {
+    setIsClient(true);
+    const stored = localStorage.getItem('language') as Language | null;
+    if (stored === 'en' || stored === 'es') {
+      setLanguageState(stored);
+    }
+  }, []);
 
   // Persist language preference to localStorage when it changes
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
-    localStorage.setItem('language', lang);
+    if (isClient) {
+      localStorage.setItem('language', lang);
+    }
   };
 
   return (
