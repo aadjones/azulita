@@ -87,6 +87,6 @@ export const en: ContentStructure = {
       email: 'azulitaholistics@gmail.com',
       instagram: '@azulitaholistics',
     },
-    copyright: '© 2024 Azulita Holistics. All rights reserved.',
+    copyright: '© 2025 Azulita Holistics. All rights reserved.',
   },
 };

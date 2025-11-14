@@ -2,7 +2,7 @@
 
 import { useLanguageContext } from './LanguageContext';
 import { getContent } from '@/content';
-import type { Language, ContentStructure } from './types';
+import type { Language } from './types';
 
 export function useLanguage() {
   const { language, setLanguage } = useLanguageContext();
@@ -12,6 +12,7 @@ export function useLanguage() {
   // e.g., t('home.hero.title') -> content.home.hero.title
   const t = (keyPath: string): string => {
     const keys = keyPath.split('.');
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let value: any = content;
 
     for (const key of keys) {

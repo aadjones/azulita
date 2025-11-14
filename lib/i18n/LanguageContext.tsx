@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import React, { createContext, useContext, useState, ReactNode } from 'react';
 import type { Language } from './types';
 
 interface LanguageContextType {
@@ -16,15 +16,14 @@ interface LanguageProviderProps {
 }
 
 export function LanguageProvider({ children, initialLanguage = 'en' }: LanguageProviderProps) {
-  const [language, setLanguageState] = useState<Language>(initialLanguage);
-
-  // Load language preference from localStorage on mount
-  useEffect(() => {
+  // Load language preference from localStorage during initialization
+  const getInitialLanguage = (): Language => {
+    if (typeof window === 'undefined') return initialLanguage;
     const stored = localStorage.getItem('language') as Language | null;
-    if (stored && (stored === 'en' || stored === 'es')) {
-      setLanguageState(stored);
-    }
-  }, []);
+    return (stored === 'en' || stored === 'es') ? stored : initialLanguage;
+  };
+
+  const [language, setLanguageState] = useState<Language>(getInitialLanguage);
 
   // Persist language preference to localStorage when it changes
   const setLanguage = (lang: Language) => {
