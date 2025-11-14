@@ -11,10 +11,17 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Azulita Holistics | Natural Healing & Wellness",
+  title: {
+    default: "Azulita Holistics | Natural Healing & Wellness",
+    template: "%s | Azulita Holistics",
+  },
   description: "Professional homeopathy, reiki, and holistic healing services",
   icons: {
     icon: "/azulita.svg",
+    apple: "/azulita.svg",
+  },
+  verification: {
+    google: "google-site-verification-code", // Add actual code when available
   },
 };
 
