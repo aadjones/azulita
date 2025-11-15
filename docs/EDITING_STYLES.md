@@ -1,8 +1,11 @@
 # How to Edit Visual Styles
 
-All design is controlled from **one file**: `styles/theme.css`
+Visual styles are controlled from **two files**:
 
-This file contains colors, fonts, spacing, shadows, and everything visual. Change something here, and it updates everywhere on the site automatically.
+- `styles/theme.css` - Design tokens (colors, fonts, spacing)
+- `styles/globals.css` - Component styles (buttons, cards, headings)
+
+**For most edits**, you'll use `theme.css` to change colors, fonts, and spacing. These changes automatically update everywhere on the site.
 
 ## Quick Guide
 
@@ -139,11 +142,19 @@ These aren't used directly in the current site, but you can reference them if ne
 
 ### Example: Make Cards Have Stronger Shadows
 
-Find the card styles in `styles/globals.css`:
+The card shadow is defined in `styles/globals.css`. Find this line:
 
 ```css
-.card-base {
-  box-shadow: var(--shadow-sm);  /* Change to --shadow-md or --shadow-lg */
+.card-feature {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* Change this */
+}
+```
+
+Change it to use a theme variable:
+
+```css
+.card-feature {
+  box-shadow: var(--shadow-lg);  /* Now using the strong shadow */
 }
 ```
 
@@ -201,6 +212,31 @@ If changes don't appear:
 - **rem units**: 1rem = 16px by default
 - **Changes apply everywhere**: One color change updates buttons, headings, etc. automatically
 - **Can't break anything**: Worst case, colors look weird. Just undo your changes!
+
+## Advanced: Editing Component Styles
+
+Most visual changes happen in `theme.css`, but if you want to change how specific components look (like buttons or cards), edit `styles/globals.css`.
+
+This file contains semantic CSS classes:
+
+```css
+/* Button styles */
+.btn-primary {
+  background-color: var(--color-primary);
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  /* ... */
+}
+
+/* Hero section styles */
+.hero-section {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  padding: 4rem 0;
+  /* ... */
+}
+```
+
+**Tip**: These classes use variables from `theme.css`, so changing a color in `theme.css` automatically updates all components that use it!
 
 ## Need Help?
 

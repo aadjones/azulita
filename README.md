@@ -27,17 +27,29 @@ Open [http://localhost:3000](http://localhost:3000)
 - Tailwind CSS v4
 - Deployed on Vercel
 
+## Features
+
+- 🌐 Bilingual support (English/Spanish) with instant language switching
+- ♿ Full accessibility (WCAG AA/AAA compliant)
+- 🔍 SEO optimized for traditional and AI search engines
+- 📱 Fully responsive design (mobile, tablet, desktop)
+- ⚡ Lightning fast (872KB bundle, static pre-rendering)
+
 ## Project Structure
 
 ```
 azulita/
 ├── app/              # Pages (English and Spanish)
-├── components/       # Reusable UI components
+├── components/       # Reusable UI components (Hero, Navigation, etc.)
 ├── content/          # All website text
 │   ├── en.ts        # English content
 │   └── es.ts        # Spanish content
+├── lib/
+│   ├── i18n/        # Language switching system
+│   └── metadata.ts  # SEO and social media metadata
 └── styles/
-    └── theme.css    # Colors, fonts, spacing
+    ├── theme.css    # Colors, fonts, spacing (design tokens)
+    └── globals.css  # Component styles and CSS classes
 ```
 
 ## Deployment

@@ -140,6 +140,7 @@ export function Navigation() {
                   setMobileMenuOpen(false);
                 }}
                 className="px-4 py-2 border-2 border-white rounded-full hover:bg-white hover:text-primary transition-all font-semibold text-sm w-fit"
+                aria-label={language === 'en' ? 'Switch to Spanish' : 'Switch to English'}
               >
                 {language === 'en' ? '🇲🇽 ES' : '🇺🇸 EN'}
               </button>

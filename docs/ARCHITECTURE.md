@@ -94,7 +94,12 @@ azulita/
 ├── 🪑 components/             (Reusable furniture)
 │   ├── Navigation.tsx        (Hallway with doors to all rooms)
 │   ├── Footer.tsx            (Foundation with contact info)
-│   └── Layout.tsx            (Frame that holds every room)
+│   ├── Layout.tsx            (Frame that holds every room)
+│   ├── Hero.tsx              (Homepage hero section)
+│   ├── ServicesOverview.tsx  (Services grid display)
+│   ├── BookingCTA.tsx        (Call-to-action component)
+│   ├── PageHeader.tsx        (Page title headers)
+│   └── StructuredData.tsx    (SEO schema markup)
 │
 ├── 📚 content/                (The writing on the walls)
 │   ├── en.ts                 (All English text)
@@ -102,11 +107,12 @@ azulita/
 │   └── index.ts              (Helper to fetch the right text)
 │
 ├── 🎨 styles/                 (Paint and decorations)
-│   ├── theme.css             (Color palette, font choices)
-│   └── globals.css           (Decoration rules)
+│   ├── theme.css             (Design tokens: colors, fonts, spacing)
+│   └── globals.css           (Component styles and semantic CSS classes)
 │
 └── 🛠️ lib/                    (House utilities)
-    └── i18n/                  (The language-switching system)
+    ├── i18n/                  (The language-switching system)
+    └── metadata.ts            (SEO and social media configuration)
 ```
 
 ---
@@ -264,6 +270,7 @@ graph TB
 1. **Sticky**: It follows you as you scroll (like a floating hallway)
 2. **Mobile Menu**: On phones, it collapses into a hamburger menu (like a folding door)
 3. **Language Toggle**: The switch that activates the magic passage between languages
+4. **Accessibility**: Includes ARIA labels for screen readers and keyboard navigation support
 
 ### How the Language Toggle Works
 
@@ -338,6 +345,107 @@ export default function SpanishLayout({ children }) {
 ```
 
 **Why this works**: When you visit `/es/about`, the Spanish layout wraps your page and tells the assistant "default to Spanish." The assistant then grabs text from the Spanish cabinet.
+
+---
+
+## 🔍 SEO & Metadata: Making the House Discoverable
+
+Think of SEO metadata as the signs and listings that help people (and search engines) find your house:
+
+### The Metadata System (lib/metadata.ts)
+
+This file is like a comprehensive directory listing for the entire house:
+
+```typescript
+export const siteConfig = {
+  name: 'Azulita Holistics',
+  url: 'https://azulitaholistics.com',
+  description: 'Professional homeopathy, reiki, and holistic healing services',
+  instagram: '@azulitaholistics',
+  email: 'azulitaholistics@gmail.com',
+};
+
+// Page-specific metadata for English and Spanish
+export const metadata = {
+  en: {
+    home: { title: '...', description: '...', keywords: [...] },
+    about: { title: '...', description: '...', keywords: [...] },
+    services: { title: '...', description: '...', keywords: [...] },
+  },
+  es: { /* Same structure in Spanish */ }
+};
+```
+
+**What it provides**:
+- **Page titles** that appear in browser tabs and search results
+- **Meta descriptions** that appear in search snippets
+- **Open Graph tags** for beautiful social media previews (Facebook, LinkedIn)
+- **Twitter Cards** for Twitter/X link sharing
+- **Keywords** for traditional search engines
+- **Canonical URLs** to prevent duplicate content issues
+
+### Structured Data (components/StructuredData.tsx)
+
+This component adds "machine-readable business cards" to each page using JSON-LD schema.org format:
+
+```mermaid
+graph TB
+    subgraph "Traditional Search"
+        Google[Google Search]
+        Bing[Bing Search]
+    end
+
+    subgraph "AI Search"
+        ChatGPT[ChatGPT]
+        Perplexity[Perplexity]
+        Gemini[Google Gemini]
+    end
+
+    StructuredData[StructuredData Component<br/>JSON-LD Schema]
+
+    StructuredData --> Google
+    StructuredData --> Bing
+    StructuredData --> ChatGPT
+    StructuredData --> Perplexity
+    StructuredData --> Gemini
+
+    style StructuredData fill:#5A9C8E,color:#fff
+```
+
+**Schema types used**:
+- **HealthAndBeautyBusiness**: Tells search engines "this is a health business"
+- **ProfessionalService**: Defines the services offered
+- **FAQPage**: Provides Q&A for AI assistants to reference
+- **WebSite**: Defines the website structure and search functionality
+
+**Why this matters**: When someone asks ChatGPT or Perplexity "find holistic healing services in [location]," the structured data helps AI understand what Azulita offers and can recommend it accurately.
+
+### How SEO Flows Through the House
+
+```mermaid
+sequenceDiagram
+    participant Search as Search Engine/AI
+    participant Page as Website Page
+    participant Meta as Metadata Config
+    participant Schema as StructuredData
+
+    Search->>Page: Request /about
+    Page->>Meta: Get metadata for 'about' page
+    Meta->>Page: Return title, description, keywords
+    Page->>Schema: Get schema.org markup
+    Schema->>Page: Return JSON-LD data
+    Page->>Search: Return HTML with metadata & schema
+    Search->>Search: Index content for search results
+    Note over Search: Can now show in search,<br/>recommend to users,<br/>generate rich snippets
+```
+
+**In Practice**:
+1. User visits `/about` or `/es/about`
+2. Page calls `generatePageMetadata('about', 'en')` or `('about', 'es')`
+3. Metadata config returns SEO tags in the correct language
+4. StructuredData component adds JSON-LD to the page
+5. Search engines and AI crawlers index both human-readable content and machine-readable schema
+6. When someone searches, your site appears with rich information
 
 ---
 
@@ -455,6 +563,90 @@ graph TB
 ```
 
 It's like furniture that automatically rearranges based on room size!
+
+---
+
+## 🧩 Reusable Components: Building Blocks
+
+The house is built from reusable components—like LEGO blocks that can be combined in different ways:
+
+### Page Components
+
+**Hero.tsx** - The welcoming entrance display:
+```typescript
+<Hero />  // Shows title, subtitle, and CTA button
+```
+
+**ServicesOverview.tsx** - A grid showcasing all services:
+```typescript
+<ServicesOverview />  // Automatically grids all services from content
+```
+
+**PageHeader.tsx** - Consistent page titles:
+```typescript
+<PageHeader title="About" subtitle="Learn our story" />
+```
+
+**BookingCTA.tsx** - Call-to-action section:
+```typescript
+<BookingCTA />  // Can be placed anywhere to encourage booking
+<BookingCTA className="bg-light" />  // Accepts custom styling
+```
+
+### Layout Components
+
+**Navigation.tsx** - The hallway connecting all rooms:
+- Responsive menu (desktop horizontal, mobile hamburger)
+- Language toggle button
+- Active link highlighting
+- Accessibility features (ARIA labels, keyboard navigation)
+
+**Footer.tsx** - The foundation with contact info:
+- Email and Instagram links with icons
+- Copyright notice
+- Bilingual content support
+
+**Layout.tsx** - The frame that holds every page:
+- Skip-to-content link for accessibility
+- Consistent structure (Navigation → Content → Footer)
+- Flex layout ensuring footer stays at bottom
+
+### Why This Matters
+
+Instead of copying the same hero section to every page:
+```
+❌ Bad: home-hero.tsx, about-hero.tsx, services-hero.tsx (duplicate code)
+✅ Good: Hero.tsx used on home page (single source of truth)
+```
+
+**Benefits**:
+1. Fix a bug once, fixed everywhere
+2. Update styling once, updates everywhere
+3. Add a feature once, available everywhere
+4. Easy to test and maintain
+
+```mermaid
+graph TB
+    Hero[Hero Component]
+    Services[ServicesOverview Component]
+    CTA[BookingCTA Component]
+    Header[PageHeader Component]
+
+    Home[Home Page] --> Hero
+    Home --> Services
+    Home --> CTA
+
+    About[About Page] --> Header
+    About --> CTA
+
+    ServicesPage[Services Page] --> Header
+    ServicesPage --> CTA
+
+    style Hero fill:#5A9C8E,color:#fff
+    style Services fill:#5A9C8E,color:#fff
+    style CTA fill:#5A9C8E,color:#fff
+    style Header fill:#5A9C8E,color:#fff
+```
 
 ---
 
@@ -680,8 +872,10 @@ graph TB
 3. **Scalable**: Adding a new page? Create it once, automatically get both languages
 4. **Maintainable**: Change a color? Update one variable. Update copy? Edit one content file.
 5. **User-Friendly**: Language preference persists across page visits
-6. **SEO-Friendly**: Separate routes for each language help search engines
+6. **SEO-Friendly**: Separate routes for each language help search engines, plus AI-optimized metadata
 7. **Responsive**: Works beautifully on phones, tablets, and desktops
+8. **Accessible**: WCAG AA/AAA compliant with skip links, ARIA labels, and semantic HTML
+9. **Fast**: Static pre-rendering with tiny bundle size (872KB) for lightning-fast loads
 
 ---
 

@@ -39,6 +39,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-base hover:text-primary-light transition-colors duration-200"
+              aria-label={`Follow us on Instagram ${content.footer.contact.instagram}`}
             >
               <svg
                 className="w-5 h-5 flex-shrink-0"
