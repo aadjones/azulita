@@ -132,18 +132,18 @@ export function generatePageMetadata(
       type: 'website',
       images: [
         {
-          url: '/azulita.svg',
-          width: 800,
-          height: 800,
-          alt: siteConfig.name,
+          url: '/og-image.png',
+          width: 1200,
+          height: 630,
+          alt: `${siteConfig.name} - Natural Healing & Wellness`,
         },
       ],
     },
     twitter: {
-      card: 'summary',
+      card: 'summary_large_image',
       title: pageMetadata.title,
       description: pageMetadata.description,
-      images: ['/azulita.svg'],
+      images: ['/og-image.png'],
     },
     robots: {
       index: true,
