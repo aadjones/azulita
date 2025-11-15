@@ -1,6 +1,7 @@
 'use client';
 
 import { useLanguage } from '@/lib/i18n/useLanguage';
+import { BOOKING_URL } from '@/lib/constants';
 
 interface BookingCTAProps {
   className?: string;
@@ -18,7 +19,12 @@ export function BookingCTA({ className = '' }: BookingCTAProps) {
         <p className="cta-description">
           {content.home.bookingCta.description}
         </p>
-        <a href="#contact" className="btn-primary">
+        <a
+          href={BOOKING_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-primary"
+        >
           {content.home.bookingCta.buttonText}
         </a>
       </div>

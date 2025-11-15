@@ -1,6 +1,7 @@
 'use client';
 
 import { useLanguage } from '@/lib/i18n/useLanguage';
+import { BOOKING_URL } from '@/lib/constants';
 
 export function Hero() {
   const { content } = useLanguage();
@@ -14,7 +15,12 @@ export function Hero() {
         <p className="hero-subtitle">
           {content.home.hero.subtitle}
         </p>
-        <a href="#contact" className="btn-primary">
+        <a
+          href={BOOKING_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-primary"
+        >
           {content.home.hero.cta}
         </a>
       </div>
