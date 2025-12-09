@@ -39,13 +39,14 @@ export function Navigation() {
     <nav className="bg-gradient-to-r from-secondary to-primary text-white sticky top-0 z-50 shadow-md">
       <div className="container-custom">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link
-            href={getLocalizedPath('/')}
-            className="text-xl md:text-2xl font-semibold tracking-wide hover:opacity-90 transition-opacity"
+          {/* Language Toggle */}
+          <button
+            onClick={toggleLanguage}
+            className="px-4 py-2 border-2 border-white rounded-full hover:bg-white hover:text-primary transition-all font-semibold text-sm"
+            aria-label={language === 'en' ? 'Switch to Spanish' : 'Switch to English'}
           >
-            Azulita Holistics
-          </Link>
+            {language === 'en' ? '🇲🇽 ES' : '🇺🇸 EN'}
+          </button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
@@ -56,26 +57,17 @@ export function Navigation() {
               {content.nav.home}
             </Link>
             <Link
-              href={getLocalizedPath('/about')}
-              className="hover:opacity-80 transition-opacity font-medium"
-            >
-              {content.nav.about}
-            </Link>
-            <Link
               href={getLocalizedPath('/services')}
               className="hover:opacity-80 transition-opacity font-medium"
             >
               {content.nav.services}
             </Link>
-
-            {/* Language Toggle */}
-            <button
-              onClick={toggleLanguage}
-              className="px-4 py-2 border-2 border-white rounded-full hover:bg-white hover:text-primary transition-all font-semibold text-sm"
-              aria-label={language === 'en' ? 'Switch to Spanish' : 'Switch to English'}
+            <Link
+              href={getLocalizedPath('/about')}
+              className="hover:opacity-80 transition-opacity font-medium"
             >
-              {language === 'en' ? '🇲🇽 ES' : '🇺🇸 EN'}
-            </button>
+              {content.nav.about}
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -121,29 +113,19 @@ export function Navigation() {
                 {content.nav.home}
               </Link>
               <Link
-                href={getLocalizedPath('/about')}
-                className="hover:opacity-80 transition-opacity font-medium py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {content.nav.about}
-              </Link>
-              <Link
                 href={getLocalizedPath('/services')}
                 className="hover:opacity-80 transition-opacity font-medium py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {content.nav.services}
               </Link>
-              <button
-                onClick={() => {
-                  toggleLanguage();
-                  setMobileMenuOpen(false);
-                }}
-                className="px-4 py-2 border-2 border-white rounded-full hover:bg-white hover:text-primary transition-all font-semibold text-sm w-fit"
-                aria-label={language === 'en' ? 'Switch to Spanish' : 'Switch to English'}
+              <Link
+                href={getLocalizedPath('/about')}
+                className="hover:opacity-80 transition-opacity font-medium py-2"
+                onClick={() => setMobileMenuOpen(false)}
               >
-                {language === 'en' ? '🇲🇽 ES' : '🇺🇸 EN'}
-              </button>
+                {content.nav.about}
+              </Link>
             </div>
           </div>
         )}

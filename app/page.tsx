@@ -1,6 +1,4 @@
 import { Hero } from '@/components/Hero';
-import { ServicesOverview } from '@/components/ServicesOverview';
-import { BookingCTA } from '@/components/BookingCTA';
 import { StructuredData } from '@/components/StructuredData';
 import { generatePageMetadata } from '@/lib/metadata';
 
@@ -12,8 +10,6 @@ export default function Home() {
       <StructuredData type="home" lang="en" />
       <div>
         <Hero />
-        <ServicesOverview />
-        <BookingCTA />
       </div>
     </>
   );

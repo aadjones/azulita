@@ -11,8 +11,11 @@ export interface NavContent {
 // Hero section content
 export interface HeroContent {
   title: string;
+  tagline: string;
   subtitle: string;
+  freeConsultation: string;
   cta: string;
+  callToAction: string;
 }
 
 // Service item

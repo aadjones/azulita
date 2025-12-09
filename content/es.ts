@@ -8,10 +8,13 @@ export const es: ContentStructure = {
   },
   home: {
     hero: {
-      title: "Bienvenido a Azulita Holistics",
+      title: "Azulita Holistics",
+      tagline: "Homeopatía · Reiki · Coaching Holístico",
       subtitle:
-        "Sanación natural a través de homeopatía, reiki y bienestar holístico",
-      cta: "Reserva Tu Consulta",
+        "Estoy aquí para acompañarte en tu camino de sanación y tu desarrollo hacia mayor bienestar.",
+      freeConsultation: "Consulta inicial gratis (25 min)",
+      cta: "AGENDA TU CONSULTA",
+      callToAction: "Platiquemos para determinar cómo te puedo ayudar.",
     },
     services: [
       {
