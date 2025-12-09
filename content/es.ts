@@ -41,57 +41,41 @@ export const es: ContentStructure = {
     },
   },
   about: {
-    title: "Acerca de Azulita Holistics",
-    subtitle: "Atención compasiva arraigada en tradiciones de sanación natural",
+    title: "Sobre Mí",
+    freeConsultation: "Agenda tu consulta inicial gratuita (25 min)",
     bio: [
-      "¡Bienvenida! Me dedico a ayudarte a alcanzar una salud óptima a través de métodos de sanación naturales y suaves.",
-      "Con años de experiencia en homeopatía y reiki, adopto un enfoque holístico del bienestar, tratando a la persona completa en lugar de solo los síntomas.",
-      "Cada individuo es único, y también lo es su camino hacia la sanación. Trabajo estrechamente con cada cliente para desarrollar planes de tratamiento personalizados que honran la sabiduría natural de tu cuerpo.",
+      "A través de los años me he preparado en diversas áreas: pedagogía, instrucción en yoga y meditación, reiki, técnicas terapéuticas, arte y meditación, e incluso matemáticas y física teóricas. ¡Y sigo estudiando! Ahora estoy en el proceso de certificarme como homeópata. Me apasiona buscar entender la naturaleza de la vida, nuestro mundo interior y cómo encajamos en el mundo que nos rodea.",
+      "Además de mis propias exploraciones y estudios, me apasiona compartir mis conocimientos, enseñar y acompañar a otros en su proceso de desarrollo y aprendizaje. Por muchos años me he dedicado a crear experiencias y materiales educativos en diversas áreas. Este trabajo ha sido principalmente en temas académicos, como matemáticas, pero me ha permitido profundizar en cómo aprenden y se desarrollan las personas. Sobre todo, me ha enseñado que cada persona es un mundo de experiencias, anhelos, necesidades, sensaciones, todas cambiantes día a día y, por lo tanto, con su manera muy individual de crecer y evolucionar.",
+      "Mis experiencias me han llevado a descubrir la suma importancia de poder atender nuestras necesidades y comprendernos a nosotros mismos para poder navegar cualquier situación sanamente. Este autoconocimiento es esencial para vivir de manera plena y equilibrada abarcando todos los aspectos que nos componen como ser humano: cuerpo, mente, emociones y espíritu.",
+      "Es por esto que hoy en día mi mayor motivación es ayudar a las personas en su proceso de autoexploración, crecimiento y sanación.",
     ],
-    philosophy: {
-      title: "Mi Enfoque",
-      content:
-        "Creo en la capacidad innata del cuerpo para sanarse a sí mismo cuando se le da el apoyo adecuado. A través de la homeopatía, el reiki y las prácticas de bienestar holístico, ayudo a crear las condiciones para que tu cuerpo restaure el equilibrio y la vitalidad de forma natural.",
-    },
   },
   services: {
     title: "Servicios",
-    subtitle: "Modalidades de sanación natural adaptadas a tus necesidades",
+    intro: "Los precios por servicios son ajustables a tu presupuesto. Estoy aquí para ayudarte.",
+    freeConsultation: "Agenda tu consulta inicial gratuita (25 min).",
     services: [
       {
-        title: "Consultas de Homeopatía",
+        title: "Homeopatía",
+        price: "$85.00 (sesión inicial + 2 seguimientos)",
         description:
-          "Planes de tratamiento homeopático individualizados basados en tu panorama completo de salud.",
-        details: [
-          "Consulta inicial (90 minutos)",
-          "Sesiones de seguimiento (60 minutos)",
-          "Recomendaciones de remedios personalizados",
-          "Apoyo continuo y ajustes",
-        ],
+          "La homeopatía es un sistema de medicina natural que trata al individuo como un todo. Al considerar tu estado mental, emocional y físico, identifica el remedio que coincide con tu experiencia personal única y estimula tu propia habilidad natural de sanar.",
+        note: "Nota: Estoy en el proceso de certificarme como homeópata. Por el momento, trabajo con pacientes con la asistencia de mi mentora.",
       },
       {
-        title: "Sesiones de Reiki",
+        title: "Reiki",
+        price: "$60.00 (60 min), $80.00 (90 min)",
         description:
-          "Sanación energética suave para restaurar el equilibrio y promover relajación profunda.",
-        details: [
-          "Sesión completa de reiki (60 minutos)",
-          "Equilibrio de chakras",
-          "Reducción del estrés y relajación",
-          "Apoyo para la sanación emocional y física",
-        ],
+          "Canalizando energía a través de mis manos te ayudaré a armonizar tu energía vital y equilibrar tus centros energéticos. Esto te ayudará a sentirte más relajado, centrado y en paz.",
       },
       {
-        title: "Coaching de Bienestar Holístico",
+        title: "Coaching Holístico",
+        price: "$65.00 (60 min), $90.00 (90 min)",
         description:
-          "Orientación integral para el bienestar de mente, cuerpo y espíritu.",
-        details: [
-          "Orientación sobre estilo de vida y nutrición",
-          "Técnicas de manejo del estrés",
-          "Prácticas de mindfulness y meditación",
-          "Integración de modalidades de sanación natural",
-        ],
+          "En estas sesiones nos enfocaremos en tus metas personales. Incorporando técnicas de ejercicio, yoga, respiración, meditación, trabajo energético y otras herramientas, puedo ayudarte a desarrollar recursos emocionales y a establecer rutinas que te conduzcan a un mayor bienestar y equilibrio.",
       },
     ],
+    closingText: "Agenda tu consulta inicial gratuita (25 min). Platiquemos para determinar cómo te puedo servir mejor.",
   },
   footer: {
     contact: {

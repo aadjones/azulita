@@ -39,23 +39,22 @@ export interface HomeContent {
 // About page content
 export interface AboutContent {
   title: string;
-  subtitle: string;
+  freeConsultation: string;
   bio: string[];
-  philosophy: {
-    title: string;
-    content: string;
-  };
 }
 
 // Services page content
 export interface ServicesContent {
   title: string;
-  subtitle: string;
+  intro: string;
+  freeConsultation: string;
   services: Array<{
     title: string;
+    price: string;
     description: string;
-    details: string[];
+    note?: string;
   }>;
+  closingText: string;
 }
 
 // Footer content

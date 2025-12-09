@@ -3,7 +3,7 @@
 import { useLanguage } from '@/lib/i18n/useLanguage';
 
 export function Footer() {
-  const { content, language } = useLanguage();
+  const { content } = useLanguage();
 
   return (
     <footer className="bg-secondary text-white py-12 md:py-16">

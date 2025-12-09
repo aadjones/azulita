@@ -80,25 +80,25 @@ Here's how the house is organized in the file system:
 
 ```
 azulita/
-├── 📐 app/                    (The floor plans)
+├── 📐 app/                    (The floor plans - route files only)
 │   ├── layout.tsx            (Blueprint for English side)
-│   ├── page.tsx              (Home room - English)
-│   ├── about/page.tsx        (About room - English)
-│   ├── services/page.tsx     (Services room - English)
+│   ├── page.tsx              (Home route - English)
+│   ├── about/page.tsx        (About route - English)
+│   ├── services/page.tsx     (Services route - English)
 │   └── es/                   (Spanish wing of the house)
 │       ├── layout.tsx        (Blueprint for Spanish side)
-│       ├── page.tsx          (Home room - Spanish)
-│       ├── about/page.tsx    (About room - Spanish)
-│       └── services/page.tsx (Services room - Spanish)
+│       ├── page.tsx          (Home route - Spanish)
+│       ├── about/page.tsx    (About route - Spanish)
+│       └── services/page.tsx (Services route - Spanish)
 │
-├── 🪑 components/             (Reusable furniture)
+├── 🪑 components/             (Reusable furniture - actual page content)
 │   ├── Navigation.tsx        (Hallway with doors to all rooms)
 │   ├── Footer.tsx            (Foundation with contact info)
 │   ├── Layout.tsx            (Frame that holds every room)
 │   ├── Hero.tsx              (Homepage hero section)
-│   ├── ServicesOverview.tsx  (Services grid display)
-│   ├── BookingCTA.tsx        (Call-to-action component)
-│   ├── PageHeader.tsx        (Page title headers)
+│   ├── HomePage.tsx          (Shared home page component)
+│   ├── AboutPage.tsx         (Shared about page component)
+│   ├── ServicesPage.tsx      (Shared services page component)
 │   └── StructuredData.tsx    (SEO schema markup)
 │
 ├── 📚 content/                (The writing on the walls)
@@ -572,26 +572,30 @@ The house is built from reusable components—like LEGO blocks that can be combi
 
 ### Page Components
 
+**HomePage.tsx** - Shared home page component:
+```typescript
+<HomePage lang="en" />  // Used by both /page.tsx and /es/page.tsx
+```
+
+**AboutPage.tsx** - Shared about page component:
+```typescript
+<AboutPage />  // Used by both /about/page.tsx and /es/about/page.tsx
+```
+
+**ServicesPage.tsx** - Shared services page component:
+```typescript
+<ServicesPage />  // Used by both /services/page.tsx and /es/services/page.tsx
+```
+
 **Hero.tsx** - The welcoming entrance display:
 ```typescript
-<Hero />  // Shows title, subtitle, and CTA button
+<Hero />  // Shows title, subtitle, and CTA button (used in HomePage)
 ```
 
-**ServicesOverview.tsx** - A grid showcasing all services:
-```typescript
-<ServicesOverview />  // Automatically grids all services from content
-```
-
-**PageHeader.tsx** - Consistent page titles:
-```typescript
-<PageHeader title="About" subtitle="Learn our story" />
-```
-
-**BookingCTA.tsx** - Call-to-action section:
-```typescript
-<BookingCTA />  // Can be placed anywhere to encourage booking
-<BookingCTA className="bg-light" />  // Accepts custom styling
-```
+**Key Architecture Pattern**: Route files (`app/page.tsx`, `app/es/page.tsx`) are minimal and just import shared page components from `components/`. This means:
+- Layout changes happen in ONE file (e.g., `components/HomePage.tsx`)
+- Both English and Spanish routes automatically get the update
+- No duplicate code between language versions
 
 ### Layout Components
 
@@ -613,39 +617,44 @@ The house is built from reusable components—like LEGO blocks that can be combi
 
 ### Why This Matters
 
-Instead of copying the same hero section to every page:
+Instead of duplicating pages for each language:
 ```
-❌ Bad: home-hero.tsx, about-hero.tsx, services-hero.tsx (duplicate code)
-✅ Good: Hero.tsx used on home page (single source of truth)
+❌ Bad: Separate implementations in /about/page.tsx and /es/about/page.tsx
+✅ Good: Shared AboutPage.tsx component imported by both routes
 ```
 
 **Benefits**:
-1. Fix a bug once, fixed everywhere
-2. Update styling once, updates everywhere
-3. Add a feature once, available everywhere
+1. Fix a bug once, fixed in both languages
+2. Update layout once, updates everywhere
+3. Add a feature once, available in both languages
 4. Easy to test and maintain
+
+**Example: How the About page works**
+```
+app/about/page.tsx → imports → components/AboutPage.tsx
+app/es/about/page.tsx → imports → components/AboutPage.tsx
+                                   ↓
+                          Uses useLanguage() hook
+                                   ↓
+                    Pulls content from en.ts or es.ts
+```
 
 ```mermaid
 graph TB
-    Hero[Hero Component]
-    Services[ServicesOverview Component]
-    CTA[BookingCTA Component]
-    Header[PageHeader Component]
+    Shared[AboutPage.tsx<br/>Shared Component]
 
-    Home[Home Page] --> Hero
-    Home --> Services
-    Home --> CTA
+    EnRoute[app/about/page.tsx<br/>English Route]
+    EsRoute[app/es/about/page.tsx<br/>Spanish Route]
 
-    About[About Page] --> Header
-    About --> CTA
+    EnRoute --> Shared
+    EsRoute --> Shared
 
-    ServicesPage[Services Page] --> Header
-    ServicesPage --> CTA
+    Shared --> Lang[useLanguage Hook]
+    Lang --> EnContent[content/en.ts]
+    Lang --> EsContent[content/es.ts]
 
-    style Hero fill:#5A9C8E,color:#fff
-    style Services fill:#5A9C8E,color:#fff
-    style CTA fill:#5A9C8E,color:#fff
-    style Header fill:#5A9C8E,color:#fff
+    style Shared fill:#5A9C8E,color:#fff
+    style Lang fill:#8B7355,color:#fff
 ```
 
 ---
@@ -744,14 +753,19 @@ const spanishContent: Content = {
 
 ## 🎓 Key Concepts for Beginners
 
-### 1. **Component Reusability**
+### 1. **Component Reusability & Shared Page Pattern**
 
-Don't build separate English and Spanish About pages. Build ONE About page that accepts different text.
+Don't duplicate page implementations between languages. Build ONE page component that both routes import.
 
 ```
-❌ Bad: AboutEnglish.tsx, AboutSpanish.tsx (duplicate code)
-✅ Good: About.tsx (one component, uses language context)
+❌ Bad: Duplicate code in /about/page.tsx and /es/about/page.tsx
+✅ Good: Both routes import components/AboutPage.tsx (one component, uses language context)
 ```
+
+**The Pattern**:
+- Route files (`app/about/page.tsx`) are minimal: just import and export the shared component
+- Page components (`components/AboutPage.tsx`) contain all the layout and logic
+- Content comes from `useLanguage()` hook, which pulls from `en.ts` or `es.ts`
 
 ### 2. **Separation of Concerns**
 
