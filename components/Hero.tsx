@@ -16,13 +16,13 @@ export function Hero() {
     <section className="hero-section">
       <div className="container-custom">
         {/* Logo and Title Group */}
-        <div className="flex items-center justify-center gap-3 md:gap-4 mb-6">
+        <div className="flex items-center justify-center gap-3 md:gap-4 mb-6 animate-fade-in-up">
           <Image
             src="/images/azulita-transparent.png"
             alt="Azulita butterfly logo"
             width={80}
             height={80}
-            className="h-16 w-auto md:h-20"
+            className="h-16 w-auto md:h-20 animate-float"
           />
           <h1 className="hero-title !mb-0">
             {content.home.hero.title}
@@ -30,17 +30,17 @@ export function Hero() {
         </div>
 
         {/* Services Tagline - PROMINENT */}
-        <p className="text-xl md:text-2xl lg:text-3xl font-semibold text-primary mb-4 md:mb-6">
+        <p className="text-xl md:text-2xl lg:text-3xl font-semibold text-primary mb-4 md:mb-6 animate-fade-in-up animation-delay-200">
           {content.home.hero.tagline}
         </p>
 
         {/* Subtitle - Value Proposition */}
-        <p className="hero-subtitle !mb-12 md:!mb-16">
+        <p className="hero-subtitle !mb-12 md:!mb-16 animate-fade-in-up animation-delay-300">
           {content.home.hero.subtitle}
         </p>
 
         {/* Primary CTA Group - Tightly coupled */}
-        <div className="cta-group-primary text-center">
+        <div className="cta-group-primary text-center animate-scale-in animation-delay-400">
           <p className="cta-text">
             {content.home.hero.freeConsultation}
           </p>
@@ -60,7 +60,7 @@ export function Hero() {
         </div>
 
         {/* Secondary CTA Group - Clear separation from primary */}
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mt-8 pt-8 border-t border-neutral/30">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mt-8 pt-8 border-t border-neutral/30 animate-fade-in animation-delay-600">
           <Link
             href={getLocalizedPath("/services")}
             className="btn-secondary inline-block min-w-[140px]"

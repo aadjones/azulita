@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Spectral, Karla } from "next/font/google";
 import "@/styles/globals.css";
 import { LanguageProvider } from "@/lib/i18n/LanguageContext";
 import { Layout } from "@/components/Layout";
 
-const inter = Inter({
+const spectral = Spectral({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["400", "600", "700"],
+  variable: "--font-spectral",
+  display: "swap",
+});
+
+const karla = Karla({
+  subsets: ["latin"],
+  variable: "--font-karla",
   display: "swap",
 });
 
@@ -32,7 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased`}>
+      <body className={`${spectral.variable} ${karla.variable} antialiased`}>
         <LanguageProvider>
           <Layout>{children}</Layout>
         </LanguageProvider>

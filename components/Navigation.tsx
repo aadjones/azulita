@@ -15,13 +15,13 @@ export function Navigation() {
   };
 
   return (
-    <nav className="bg-gradient-to-r from-secondary to-primary text-white sticky top-0 z-50 shadow-md">
+    <nav className="sticky top-0 z-50 backdrop-blur-md bg-gradient-to-r from-primary/95 via-primary-dark/95 to-secondary/95 text-white shadow-lg">
       <div className="container-custom">
         <div className="flex items-center justify-between h-16">
           {/* Language Toggle */}
           <button
             onClick={toggleLanguage}
-            className="px-4 py-2 border-2 border-white rounded-full hover:bg-white hover:text-primary transition-all font-semibold text-sm"
+            className="px-4 py-2 border-2 border-white/80 rounded-full hover:bg-white hover:text-primary transition-all font-semibold text-sm backdrop-blur-sm hover:shadow-lg"
             aria-label={language === 'en' ? 'Switch to Spanish' : 'Switch to English'}
           >
             {language === 'en' ? '🇲🇽 ES' : '🇺🇸 EN'}
@@ -31,19 +31,19 @@ export function Navigation() {
           <div className="hidden md:flex items-center gap-8">
             <Link
               href={getLocalizedPath('/')}
-              className="hover:opacity-80 transition-opacity font-medium"
+              className="hover:text-accent-bright transition-colors font-medium tracking-wide relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-accent-bright after:transition-all hover:after:w-full"
             >
               {content.nav.home}
             </Link>
             <Link
               href={getLocalizedPath('/services')}
-              className="hover:opacity-80 transition-opacity font-medium"
+              className="hover:text-accent-bright transition-colors font-medium tracking-wide relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-accent-bright after:transition-all hover:after:w-full"
             >
               {content.nav.services}
             </Link>
             <Link
               href={getLocalizedPath('/about')}
-              className="hover:opacity-80 transition-opacity font-medium"
+              className="hover:text-accent-bright transition-colors font-medium tracking-wide relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-accent-bright after:transition-all hover:after:w-full"
             >
               {content.nav.about}
             </Link>
@@ -82,25 +82,25 @@ export function Navigation() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-white/20">
+          <div className="md:hidden py-4 border-t border-white/20 animate-fade-in">
             <div className="flex flex-col gap-4">
               <Link
                 href={getLocalizedPath('/')}
-                className="hover:opacity-80 transition-opacity font-medium py-2"
+                className="hover:text-accent-bright transition-colors font-medium py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {content.nav.home}
               </Link>
               <Link
                 href={getLocalizedPath('/services')}
-                className="hover:opacity-80 transition-opacity font-medium py-2"
+                className="hover:text-accent-bright transition-colors font-medium py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {content.nav.services}
               </Link>
               <Link
                 href={getLocalizedPath('/about')}
-                className="hover:opacity-80 transition-opacity font-medium py-2"
+                className="hover:text-accent-bright transition-colors font-medium py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {content.nav.about}
