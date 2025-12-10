@@ -68,7 +68,7 @@ export const metadata = {
       ],
     },
     about: {
-      title: 'Acerca de | Azulita Holistics',
+      title: 'Sobre Mí | Azulita Holistics',
       description: 'Conoce nuestro enfoque compasivo hacia la sanación natural a través de la homeopatía y el reiki. Cuidado personalizado tratando a la persona completa.',
       keywords: [
         'practicante holístico',

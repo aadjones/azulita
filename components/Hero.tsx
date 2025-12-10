@@ -15,13 +15,21 @@ export function Hero() {
   return (
     <section className="hero-section">
       <div className="container-custom">
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem", marginBottom: "1rem" }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "1rem",
+            marginBottom: "1rem",
+          }}
+        >
           <Image
-            src="/images/azulita.jpg"
+            src="/images/azulita-transparent.png"
             alt="Azulita butterfly logo"
             width={80}
             height={80}
-            style={{ height: "80px", width: "auto" }}
+            style={{ height: "80px", width: "auto", backgroundColor: "var(--background)" }}
           />
           <h1 className="hero-title" style={{ margin: 0 }}>
             {content.home.hero.title}

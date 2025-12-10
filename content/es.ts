@@ -3,7 +3,7 @@ import type { ContentStructure } from "@/lib/i18n/types";
 export const es: ContentStructure = {
   nav: {
     home: "Inicio",
-    about: "Acerca",
+    about: "Sobre Mí",
     services: "Servicios",
   },
   home: {
@@ -44,7 +44,7 @@ export const es: ContentStructure = {
     title: "Sobre Mí",
     freeConsultation: "Agenda tu consulta inicial gratuita (25 min)",
     bio: [
-      "A través de los años me he preparado en diversas áreas: pedagogía, instrucción en yoga y meditación, reiki, técnicas terapéuticas, arte y meditación, e incluso matemáticas y física teóricas. ¡Y sigo estudiando! Ahora estoy en el proceso de certificarme como homeópata. Me apasiona buscar entender la naturaleza de la vida, nuestro mundo interior y cómo encajamos en el mundo que nos rodea.",
+      "¡Hola! Soy Anakaren Santana. A través de los años me he preparado en diversas áreas: pedagogía, instrucción en yoga y meditación, reiki, técnicas terapéuticas, arte y meditación, e incluso matemáticas y física teóricas. ¡Y sigo estudiando! Ahora estoy en el proceso de certificarme como homeópata. Me apasiona buscar entender la naturaleza de la vida, nuestro mundo interior y cómo encajamos en el mundo que nos rodea.",
       "Además de mis propias exploraciones y estudios, me apasiona compartir mis conocimientos, enseñar y acompañar a otros en su proceso de desarrollo y aprendizaje. Por muchos años me he dedicado a crear experiencias y materiales educativos en diversas áreas. Este trabajo ha sido principalmente en temas académicos, como matemáticas, pero me ha permitido profundizar en cómo aprenden y se desarrollan las personas. Sobre todo, me ha enseñado que cada persona es un mundo de experiencias, anhelos, necesidades, sensaciones, todas cambiantes día a día y, por lo tanto, con su manera muy individual de crecer y evolucionar.",
       "Mis experiencias me han llevado a descubrir la suma importancia de poder atender nuestras necesidades y comprendernos a nosotros mismos para poder navegar cualquier situación sanamente. Este autoconocimiento es esencial para vivir de manera plena y equilibrada abarcando todos los aspectos que nos componen como ser humano: cuerpo, mente, emociones y espíritu.",
       "Es por esto que hoy en día mi mayor motivación es ayudar a las personas en su proceso de autoexploración, crecimiento y sanación.",
@@ -79,7 +79,7 @@ export const es: ContentStructure = {
   },
   footer: {
     contact: {
-      title: "Contáctanos",
+      title: "Contáctame",
       email: "azulitaholistics@gmail.com",
       instagram: "@azulitaholistics",
     },
