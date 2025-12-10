@@ -2,34 +2,13 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { useRouter, usePathname } from 'next/navigation';
 import { useLanguage } from '@/lib/i18n/useLanguage';
+import { useLanguageToggle } from '@/lib/i18n/useLanguageToggle';
 
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { content, language, setLanguage } = useLanguage();
-  const router = useRouter();
-  const pathname = usePathname();
-
-  const toggleLanguage = () => {
-    const newLang = language === 'en' ? 'es' : 'en';
-    setLanguage(newLang);
-
-    // Convert current path to new language
-    if (newLang === 'es') {
-      // Going to Spanish
-      if (!pathname.startsWith('/es')) {
-        const newPath = pathname === '/' ? '/es' : `/es${pathname}`;
-        router.push(newPath);
-      }
-    } else {
-      // Going to English
-      if (pathname.startsWith('/es')) {
-        const newPath = pathname.replace(/^\/es/, '') || '/';
-        router.push(newPath);
-      }
-    }
-  };
+  const { content, language } = useLanguage();
+  const { toggleLanguage } = useLanguageToggle();
 
   const getLocalizedPath = (path: string) => {
     return language === 'es' ? `/es${path}` : path;

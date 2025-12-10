@@ -8,47 +8,34 @@ export default function ServicesPage() {
 
   return (
     <div>
+      <section className="page-header-compact">
+        <div className="container-custom">
+          <h1 className="page-title">{content.services.title}</h1>
+          <p className="page-subtitle">{content.services.intro}</p>
+        </div>
+      </section>
+
       <section className="section-spacing">
         <div className="container-custom">
-          <h1 style={{ fontSize: '2.5rem', marginBottom: '2rem', color: 'var(--primary)', textAlign: 'center' }}>
-            {content.services.title}
-          </h1>
-
-          <p style={{ textAlign: 'center', marginBottom: '1rem' }}>
-            {content.services.intro}
-          </p>
-
-          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <p style={{ marginBottom: '1rem' }}>{content.services.freeConsultation}</p>
-            <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary"
-              style={{ display: 'inline-block' }}
-            >
-              {content.home.hero.cta}
-            </a>
-          </div>
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem', maxWidth: '800px', margin: '0 auto' }}>
+          {/* Services List */}
+          <div className="flex flex-col gap-8 md:gap-12 max-w-3xl mx-auto mb-12 md:mb-16">
             {content.services.services.map((service, index) => (
-              <div key={index}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '1rem', flexWrap: 'wrap', gap: '0.5rem' }}>
-                  <h2 style={{ fontSize: '1.5rem', color: 'var(--primary)', textTransform: 'uppercase' }}>
+              <div key={index} className="card-base">
+                <div className="flex justify-between items-baseline mb-3 flex-wrap gap-2">
+                  <h2 className="service-detail-title !mb-0">
                     {service.title}
                   </h2>
-                  <span style={{ fontSize: '1rem', fontWeight: 'bold' }}>
+                  <span className="text-base md:text-lg font-bold text-primary">
                     {service.price}
                   </span>
                 </div>
 
-                <p className="text-body" style={{ marginBottom: service.note ? '1rem' : 0 }}>
+                <p className="service-detail-description !mb-0">
                   {service.description}
                 </p>
 
                 {service.note && (
-                  <p style={{ fontSize: '0.9rem', fontStyle: 'italic', color: 'var(--text-secondary)' }}>
+                  <p className="text-sm text-secondary/70 mt-3">
                     {service.note}
                   </p>
                 )}
@@ -56,19 +43,24 @@ export default function ServicesPage() {
             ))}
           </div>
 
-          <div style={{ textAlign: 'center', marginTop: '4rem' }}>
-            <p style={{ marginBottom: '1.5rem' }}>
-              {content.services.closingText}
+          {/* Secondary CTA Group - Text above and below button */}
+          <div className="text-center max-w-3xl mx-auto">
+            <p className="cta-text">
+              {content.services.freeConsultation}
             </p>
+
             <a
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary"
-              style={{ display: 'inline-block' }}
+              className="btn-primary-enhanced"
             >
               {content.home.hero.cta}
             </a>
+
+            <p className="cta-text-secondary mt-3">
+              {content.services.closingText}
+            </p>
           </div>
         </div>
       </section>

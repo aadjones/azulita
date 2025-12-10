@@ -1,0 +1,11 @@
+/* Utility classes */
+
+@layer components {
+  .bg-light {
+    background-color: rgba(245, 243, 238, 0.3);
+  }
+
+  .text-center {
+    text-align: center;
+  }
+}

@@ -1,0 +1,165 @@
+/* Reusable component classes */
+
+@layer components {
+  /* Buttons */
+  .btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-lg);
+    font-weight: 500;
+    transition: background-color var(--transition-normal);
+    cursor: pointer;
+    border: none;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-primary-light);
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    color: var(--color-primary);
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--color-primary);
+    border-radius: var(--radius-lg);
+    font-weight: 500;
+    transition: all var(--transition-normal);
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: white;
+  }
+
+  .btn-primary-enhanced {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 0.875rem 1.75rem;
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all var(--transition-normal);
+    cursor: pointer;
+    border: none;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+
+  @media (min-width: 768px) {
+    .btn-primary-enhanced {
+      font-size: 1.125rem;
+    }
+  }
+
+  .btn-primary-enhanced:hover {
+    background-color: var(--color-primary-light);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Cards */
+  .card-base {
+    background-color: white;
+    padding: var(--spacing-card);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--transition-normal);
+  }
+
+  .card-base:hover {
+    box-shadow: var(--shadow-md);
+  }
+
+  .card-feature {
+    background-color: var(--color-neutral-light);
+    padding: var(--spacing-card);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-neutral);
+  }
+
+  /* CTA Patterns */
+  .cta-group-primary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 3rem;
+  }
+
+  @media (min-width: 768px) {
+    .cta-group-primary {
+      margin-bottom: 4rem;
+    }
+  }
+
+  .cta-group-secondary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(232, 228, 220, 0.3);
+  }
+
+  @media (min-width: 768px) {
+    .cta-group-secondary {
+      margin-top: 5rem;
+    }
+  }
+
+  .cta-text {
+    font-size: 1rem;
+    color: rgba(44, 74, 90, 0.9);
+    font-weight: 500;
+  }
+
+  @media (min-width: 768px) {
+    .cta-text {
+      font-size: 1.125rem;
+    }
+  }
+
+  .cta-text-secondary {
+    font-size: 1rem;
+    color: rgba(44, 74, 90, 0.8);
+  }
+
+  @media (min-width: 768px) {
+    .cta-text-secondary {
+      font-size: 1.125rem;
+    }
+  }
+
+  /* Container */
+  .container-custom {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .container-custom {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container-custom {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+}

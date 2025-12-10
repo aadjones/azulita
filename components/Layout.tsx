@@ -2,6 +2,7 @@
 
 import { ReactNode } from 'react';
 import { Navigation } from './Navigation';
+import { LanguageBanner } from './LanguageBanner';
 import { Footer } from './Footer';
 
 interface LayoutProps {
@@ -19,6 +20,7 @@ export function Layout({ children }: LayoutProps) {
         Skip to main content
       </a>
       <Navigation />
+      <LanguageBanner />
       <main id="main-content" className="flex-grow">
         {children}
       </main>

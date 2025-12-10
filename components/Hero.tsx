@@ -15,75 +15,61 @@ export function Hero() {
   return (
     <section className="hero-section">
       <div className="container-custom">
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "1rem",
-            marginBottom: "1rem",
-          }}
-        >
+        {/* Logo and Title Group */}
+        <div className="flex items-center justify-center gap-3 md:gap-4 mb-6">
           <Image
             src="/images/azulita-transparent.png"
             alt="Azulita butterfly logo"
             width={80}
             height={80}
-            style={{ height: "80px", width: "auto", backgroundColor: "var(--background)" }}
+            className="h-16 w-auto md:h-20"
           />
-          <h1 className="hero-title" style={{ margin: 0 }}>
+          <h1 className="hero-title !mb-0">
             {content.home.hero.title}
           </h1>
         </div>
-        <p
-          className="hero-subtitle"
-          style={{ fontSize: "1.125rem", marginBottom: "1rem" }}
-        >
+
+        {/* Services Tagline - PROMINENT */}
+        <p className="text-xl md:text-2xl lg:text-3xl font-semibold text-primary mb-4 md:mb-6">
           {content.home.hero.tagline}
         </p>
-        <p className="hero-subtitle">{content.home.hero.subtitle}</p>
-        <p
-          style={{
-            fontSize: "1rem",
-            marginTop: "1.5rem",
-            marginBottom: "1rem",
-          }}
-        >
-          {content.home.hero.freeConsultation}
+
+        {/* Subtitle - Value Proposition */}
+        <p className="hero-subtitle !mb-12 md:!mb-16">
+          {content.home.hero.subtitle}
         </p>
-        <a
-          href={BOOKING_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-primary"
-          style={{ marginBottom: "1rem" }}
-        >
-          {content.home.hero.cta}
-        </a>
-        <p
-          style={{ fontSize: "1rem", marginTop: "1rem", marginBottom: "2rem" }}
-        >
-          {content.home.hero.callToAction}
-        </p>
-        <div
-          style={{
-            display: "flex",
-            gap: "1rem",
-            justifyContent: "center",
-            flexWrap: "wrap",
-          }}
-        >
+
+        {/* Primary CTA Group - Tightly coupled */}
+        <div className="cta-group-primary text-center">
+          <p className="cta-text">
+            {content.home.hero.freeConsultation}
+          </p>
+
+          <a
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary-enhanced"
+          >
+            {content.home.hero.cta}
+          </a>
+
+          <p className="cta-text-secondary mt-3">
+            {content.home.hero.callToAction}
+          </p>
+        </div>
+
+        {/* Secondary CTA Group - Clear separation from primary */}
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mt-8 pt-8 border-t border-neutral/30">
           <Link
             href={getLocalizedPath("/services")}
-            className="btn-primary"
-            style={{ display: "inline-block" }}
+            className="btn-secondary inline-block min-w-[140px]"
           >
             {content.nav.services}
           </Link>
           <Link
             href={getLocalizedPath("/about")}
-            className="btn-primary"
-            style={{ display: "inline-block" }}
+            className="btn-secondary inline-block min-w-[140px]"
           >
             {content.nav.about}
           </Link>

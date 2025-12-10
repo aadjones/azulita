@@ -11,28 +11,27 @@ export default function AboutPage() {
     <div>
       <section className="section-spacing">
         <div className="container-custom">
-          <div
-            className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-8 md:gap-12"
-            style={{ alignItems: 'start' }}
-          >
-            {/* Left Column - Image and Button */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-8 md:gap-12 items-start">
+            {/* Left Column - Image and CTA */}
+            <div className="flex flex-col gap-8">
               <Image
                 src="/images/profile.jpg"
                 alt="Profile photo"
                 width={400}
                 height={400}
-                className="max-w-sm mx-auto md:max-w-none md:mx-0"
-                style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
+                className="w-full h-auto rounded-lg max-w-sm mx-auto md:max-w-none md:mx-0"
               />
-              <div style={{ textAlign: 'center' }}>
-                <p style={{ marginBottom: '1rem' }}>{content.about.freeConsultation}</p>
+
+              {/* CTA Group - Tightly coupled */}
+              <div className="cta-group-primary text-center">
+                <p className="cta-text">
+                  {content.about.freeConsultation}
+                </p>
                 <a
                   href={BOOKING_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-primary"
-                  style={{ display: 'inline-block' }}
+                  className="btn-primary-enhanced"
                 >
                   {content.home.hero.cta}
                 </a>
@@ -41,7 +40,7 @@ export default function AboutPage() {
 
             {/* Right Column - Bio Text */}
             <div>
-              <h1 style={{ fontSize: '2.5rem', marginBottom: '2rem', color: 'var(--primary)' }}>
+              <h1 className="page-title !text-left !mb-8">
                 {content.about.title}
               </h1>
               <div className="text-body-spacing">
