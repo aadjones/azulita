@@ -23,9 +23,13 @@ export function LanguageProvider({ children, initialLanguage = 'en' }: LanguageP
   // After hydration, check localStorage preference
   React.useEffect(() => {
     setIsClient(true);
-    const stored = localStorage.getItem('language') as Language | null;
-    if (stored === 'en' || stored === 'es') {
-      setLanguageState(stored);
+    try {
+      const stored = localStorage.getItem('language') as Language | null;
+      if (stored === 'en' || stored === 'es') {
+        setLanguageState(stored);
+      }
+    } catch {
+      // Safari private mode or localStorage disabled - fail silently
     }
   }, []);
 
@@ -33,7 +37,11 @@ export function LanguageProvider({ children, initialLanguage = 'en' }: LanguageP
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
     if (isClient) {
-      localStorage.setItem('language', lang);
+      try {
+        localStorage.setItem('language', lang);
+      } catch {
+        // Safari private mode or localStorage disabled - fail silently
+      }
     }
   };
 

@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import Script from 'next/script';
 import { BOOKING_URL } from '@/lib/constants';
 
 interface CalEmbedProps {
@@ -17,29 +18,17 @@ export function CalEmbed({
 }: CalEmbedProps) {
   const [isLoaded, setIsLoaded] = useState(false);
 
-  useEffect(() => {
-    // Lazy load Cal.com embed script
-    const script = document.createElement('script');
-    script.src = 'https://app.cal.com/embed/embed.js';
-    script.async = true;
-    script.onload = () => setIsLoaded(true);
-    script.onerror = () => {
-      console.error('Failed to load Cal.com embed script');
-      setIsLoaded(false);
-    };
-
-    document.body.appendChild(script);
-
-    return () => {
-      // Cleanup script on unmount
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
-    };
-  }, []);
-
   return (
     <div className={`cal-embed-container ${className}`}>
+      <Script
+        src="https://app.cal.com/embed/embed.js"
+        strategy="lazyOnload"
+        onLoad={() => setIsLoaded(true)}
+        onError={() => {
+          console.error('Failed to load Cal.com embed script');
+          setIsLoaded(false);
+        }}
+      />
       {!isLoaded && (
         <div className="cal-loading">
           <p>Loading booking calendar...</p>
