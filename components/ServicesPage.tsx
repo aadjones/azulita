@@ -44,7 +44,7 @@ export default function ServicesPage() {
           </div>
 
           {/* Secondary CTA Group - Text above and below button */}
-          <div className="text-center max-w-3xl mx-auto">
+          <div className="cta-group-primary text-center">
             <p className="cta-text">
               {content.services.freeConsultation}
             </p>
