@@ -33,12 +33,6 @@ export const en: ContentStructure = {
           "Comprehensive approach to health addressing mind, body, and spirit in harmony.",
       },
     ],
-    bookingCta: {
-      title: "Ready to Begin Your Healing Journey?",
-      description:
-        "Schedule your initial consultation to discuss your health goals and create a personalized wellness plan.",
-      buttonText: "Book Consultation",
-    },
   },
   about: {
     title: "About Me",

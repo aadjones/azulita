@@ -33,12 +33,6 @@ export const es: ContentStructure = {
           "Enfoque integral de la salud que aborda mente, cuerpo y espíritu en armonía.",
       },
     ],
-    bookingCta: {
-      title: "¿Lista para Comenzar Tu Viaje de Sanación?",
-      description:
-        "Agenda tu consulta inicial para hablar sobre tus objetivos de salud y crear un plan de bienestar personalizado.",
-      buttonText: "Reservar Consulta",
-    },
   },
   about: {
     title: "Sobre Mí",

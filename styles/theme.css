@@ -62,7 +62,6 @@
   --color-neutral: #E7DACB;           /* Main beige/cream color */
   --color-neutral-rgb: 231, 218, 203; /* RGB version for transparent effects */
   --color-neutral-light: #F4EDE3;     /* Light cream for subtle backgrounds */
-  --color-neutral-dark: #A89580;      /* Darker beige for borders */
 
   /* Accent Colors (Gold/Warm) - Used for call-to-action, highlights */
   --color-accent: #E6A656;            /* Main gold color */
@@ -81,7 +80,6 @@
 
   /* Text Colors */
   --color-text-light: #6B5D52;        /* Secondary text (medium brown) */
-  --color-text-muted: #8A7C71;        /* Muted text (light brown-gray) */
 
   /* White (for transparent overlays) */
   --color-white-rgb: 255, 255, 255;   /* RGB version for transparent effects */

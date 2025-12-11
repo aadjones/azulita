@@ -22,18 +22,12 @@ export interface HeroContent {
 export interface ServiceItem {
   title: string;
   description: string;
-  icon?: string;
 }
 
 // Home page content
 export interface HomeContent {
   hero: HeroContent;
   services: ServiceItem[];
-  bookingCta: {
-    title: string;
-    description: string;
-    buttonText: string;
-  };
 }
 
 // About page content
