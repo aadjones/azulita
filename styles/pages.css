@@ -3,9 +3,27 @@
 @layer components {
   /* Hero Section */
   .hero-section {
-    background: linear-gradient(to bottom, rgba(90, 156, 142, 0.05), transparent);
+    background:
+      radial-gradient(ellipse at top right, rgba(230, 166, 86, 0.15), transparent 50%),
+      radial-gradient(ellipse at bottom left, rgba(26, 123, 123, 0.12), transparent 50%),
+      radial-gradient(circle at 50% 0%, rgba(200, 90, 63, 0.08), transparent 60%),
+      linear-gradient(135deg, #FAF8F5 0%, #F4EDE3 100%);
     padding: 5rem 0 8rem;
     text-align: center;
+    position: relative;
+  }
+
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+      repeating-linear-gradient(90deg, rgba(26, 123, 123, 0.02) 0px, transparent 2px, transparent 40px),
+      repeating-linear-gradient(0deg, rgba(26, 123, 123, 0.02) 0px, transparent 2px, transparent 40px);
+    pointer-events: none;
   }
 
   @media (min-width: 768px) {
@@ -15,44 +33,66 @@
   }
 
   .hero-title {
-    font-size: 2.25rem;
+    font-size: 2.5rem;
     font-weight: 700;
-    color: var(--color-primary);
+    color: var(--color-primary-dark);
     margin-bottom: 1.5rem;
+    font-family: var(--font-heading);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
   }
 
   @media (min-width: 768px) {
     .hero-title {
-      font-size: 3rem;
+      font-size: 3.5rem;
     }
   }
 
   @media (min-width: 1024px) {
     .hero-title {
-      font-size: 3.75rem;
+      font-size: 4.25rem;
     }
   }
 
   .hero-subtitle {
     font-size: 1.125rem;
-    color: rgba(44, 74, 90, 0.8);
+    color: var(--color-text-light);
     max-width: 42rem;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2rem;
+    font-family: var(--font-body);
+    line-height: 1.7;
   }
 
   @media (min-width: 768px) {
     .hero-subtitle {
-      font-size: 1.25rem;
+      font-size: 1.3rem;
     }
   }
 
   /* Page Header */
   .page-header {
-    background: linear-gradient(to bottom, rgba(90, 156, 142, 0.05), transparent);
+    background:
+      radial-gradient(ellipse at top, rgba(230, 166, 86, 0.12), transparent 50%),
+      radial-gradient(circle at bottom right, rgba(26, 123, 123, 0.1), transparent 50%),
+      linear-gradient(135deg, #FAF8F5 0%, #F4EDE3 100%);
     padding: 4rem 0 6rem;
     text-align: center;
+    position: relative;
+  }
+
+  .page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+      repeating-linear-gradient(90deg, rgba(26, 123, 123, 0.02) 0px, transparent 2px, transparent 40px),
+      repeating-linear-gradient(0deg, rgba(26, 123, 123, 0.02) 0px, transparent 2px, transparent 40px);
+    pointer-events: none;
   }
 
   @media (min-width: 768px) {
@@ -62,9 +102,12 @@
   }
 
   .page-header-compact {
-    background: linear-gradient(to bottom, rgba(90, 156, 142, 0.05), transparent);
+    background:
+      radial-gradient(ellipse at top, rgba(230, 166, 86, 0.1), transparent 50%),
+      linear-gradient(135deg, #FAF8F5 0%, #F4EDE3 100%);
     padding: 3rem 0 2rem;
     text-align: center;
+    position: relative;
   }
 
   @media (min-width: 768px) {
@@ -74,29 +117,33 @@
   }
 
   .page-title {
-    font-size: 2.25rem;
+    font-size: 2.5rem;
     font-weight: 700;
-    color: var(--color-primary);
+    color: var(--color-primary-dark);
     margin-bottom: 1rem;
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
   }
 
   @media (min-width: 768px) {
     .page-title {
-      font-size: 3rem;
+      font-size: 3.25rem;
     }
   }
 
   .page-subtitle {
     font-size: 1.125rem;
-    color: rgba(44, 74, 90, 0.8);
+    color: var(--color-text-light);
     max-width: 42rem;
     margin-left: auto;
     margin-right: auto;
+    font-family: var(--font-body);
+    line-height: 1.7;
   }
 
   @media (min-width: 768px) {
     .page-subtitle {
-      font-size: 1.25rem;
+      font-size: 1.3rem;
     }
   }
 
@@ -107,16 +154,18 @@
   }
 
   .section-title {
-    font-size: 1.875rem;
+    font-size: 2rem;
     font-weight: 700;
-    color: var(--color-primary);
+    color: var(--color-primary-dark);
     margin-bottom: 1.5rem;
     text-align: center;
+    font-family: var(--font-heading);
+    letter-spacing: -0.01em;
   }
 
   @media (min-width: 768px) {
     .section-title {
-      font-size: 2.25rem;
+      font-size: 2.5rem;
     }
   }
 
@@ -135,8 +184,9 @@
 
   .text-body {
     font-size: 1.125rem;
-    color: rgba(44, 74, 90, 0.8);
+    color: var(--color-text-light);
     line-height: 1.75;
+    font-family: var(--font-body);
   }
 
   .text-body-spacing {
@@ -159,33 +209,41 @@
   }
 
   .service-card-title {
-    font-size: 1.25rem;
-    font-weight: 600;
+    font-size: 1.375rem;
+    font-weight: 700;
     color: var(--color-primary);
     margin-bottom: 0.75rem;
+    font-family: var(--font-heading);
+    letter-spacing: -0.01em;
   }
 
   .service-card-description {
-    color: rgba(44, 74, 90, 0.8);
+    color: var(--color-text-light);
+    font-family: var(--font-body);
+    line-height: 1.6;
   }
 
   .service-detail-title {
-    font-size: 1.5rem;
+    font-size: 1.625rem;
     font-weight: 700;
-    color: var(--color-primary);
+    color: var(--color-primary-dark);
     margin-bottom: 1rem;
+    font-family: var(--font-heading);
+    letter-spacing: -0.01em;
   }
 
   @media (min-width: 768px) {
     .service-detail-title {
-      font-size: 1.875rem;
+      font-size: 2rem;
     }
   }
 
   .service-detail-description {
     font-size: 1.125rem;
-    color: rgba(44, 74, 90, 0.8);
+    color: var(--color-text-light);
     margin-bottom: 1.5rem;
+    font-family: var(--font-body);
+    line-height: 1.7;
   }
 
   .service-detail-list {
@@ -197,13 +255,15 @@
   .service-detail-item {
     display: flex;
     align-items: flex-start;
-    color: rgba(44, 74, 90, 0.8);
+    color: var(--color-text-light);
+    font-family: var(--font-body);
   }
 
   .service-detail-bullet {
-    color: var(--color-primary);
+    color: var(--color-accent);
     margin-right: 0.75rem;
     margin-top: 0.25rem;
+    font-weight: 600;
   }
 
   .service-list-spacing {
@@ -225,21 +285,25 @@
   }
 
   .cta-title {
-    font-size: 1.875rem;
+    font-size: 2rem;
     font-weight: 700;
-    color: var(--color-primary);
+    color: var(--color-primary-dark);
     margin-bottom: 1rem;
+    font-family: var(--font-heading);
+    letter-spacing: -0.01em;
   }
 
   @media (min-width: 768px) {
     .cta-title {
-      font-size: 2.25rem;
+      font-size: 2.5rem;
     }
   }
 
   .cta-description {
     font-size: 1.125rem;
-    color: rgba(44, 74, 90, 0.8);
+    color: var(--color-text-light);
     margin-bottom: 2rem;
+    font-family: var(--font-body);
+    line-height: 1.7;
   }
 }

@@ -3,21 +3,24 @@
 @layer components {
   /* Buttons */
   .btn-primary {
-    background-color: var(--color-primary);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
     color: white;
-    padding: 0.75rem 1.5rem;
+    padding: 0.875rem 1.75rem;
     border-radius: var(--radius-lg);
-    font-weight: 500;
-    transition: background-color var(--transition-normal);
+    font-weight: 600;
+    font-family: var(--font-body);
+    transition: all var(--transition-normal);
     cursor: pointer;
     border: none;
     display: inline-block;
     text-align: center;
     text-decoration: none;
+    box-shadow: 0 4px 12px rgba(26, 123, 123, 0.25);
   }
 
   .btn-primary:hover {
-    background-color: var(--color-primary-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(26, 123, 123, 0.35);
   }
 
   .btn-secondary {
@@ -26,7 +29,8 @@
     padding: 0.75rem 1.5rem;
     border: 2px solid var(--color-primary);
     border-radius: var(--radius-lg);
-    font-weight: 500;
+    font-weight: 600;
+    font-family: var(--font-body);
     transition: all var(--transition-normal);
     cursor: pointer;
     display: inline-block;
@@ -35,55 +39,70 @@
   }
 
   .btn-secondary:hover {
-    background-color: var(--color-primary);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
     color: white;
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(26, 123, 123, 0.25);
   }
 
   .btn-primary-enhanced {
-    background-color: var(--color-primary);
+    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-light) 100%);
     color: white;
-    padding: 0.875rem 1.75rem;
+    padding: 1rem 2rem;
     border-radius: var(--radius-lg);
-    font-weight: 600;
-    font-size: 1rem;
+    font-weight: 700;
+    font-size: 1.0625rem;
+    font-family: var(--font-body);
+    letter-spacing: 0.015em;
     transition: all var(--transition-normal);
     cursor: pointer;
     border: none;
     display: inline-block;
     text-align: center;
     text-decoration: none;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 6px 16px rgba(200, 90, 63, 0.3);
   }
 
   @media (min-width: 768px) {
     .btn-primary-enhanced {
       font-size: 1.125rem;
+      padding: 1.125rem 2.25rem;
     }
   }
 
   .btn-primary-enhanced:hover {
-    background-color: var(--color-primary-light);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(200, 90, 63, 0.4);
   }
 
   /* Cards */
   .card-base {
-    background-color: white;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(250, 248, 245, 0.95) 100%);
     padding: var(--spacing-card);
     border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-sm);
-    transition: box-shadow var(--transition-normal);
+    box-shadow: 0 4px 12px rgba(43, 58, 58, 0.08);
+    border: 1px solid rgba(231, 218, 203, 0.3);
+    transition: all var(--transition-normal);
   }
 
   .card-base:hover {
-    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(43, 58, 58, 0.12);
+    border-color: rgba(230, 166, 86, 0.3);
   }
 
   .card-feature {
-    background-color: var(--color-neutral-light);
+    background: linear-gradient(135deg, var(--color-neutral-light) 0%, rgba(231, 218, 203, 0.4) 100%);
     padding: var(--spacing-card);
     border-radius: var(--radius-xl);
-    border: 1px solid var(--color-neutral);
+    border: 2px solid rgba(26, 123, 123, 0.1);
+    transition: all var(--transition-normal);
+  }
+
+  .card-feature:hover {
+    border-color: rgba(26, 123, 123, 0.25);
+    box-shadow: 0 8px 16px rgba(26, 123, 123, 0.08);
   }
 
   /* CTA Patterns */
@@ -119,8 +138,9 @@
 
   .cta-text {
     font-size: 1rem;
-    color: rgba(44, 74, 90, 0.9);
-    font-weight: 500;
+    color: var(--color-foreground);
+    font-weight: 600;
+    font-family: var(--font-body);
   }
 
   @media (min-width: 768px) {
@@ -131,7 +151,8 @@
 
   .cta-text-secondary {
     font-size: 1rem;
-    color: rgba(44, 74, 90, 0.8);
+    color: var(--color-text-light);
+    font-family: var(--font-body);
   }
 
   @media (min-width: 768px) {

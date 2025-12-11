@@ -1,18 +1,23 @@
 /* Azulita Holistics Design Tokens */
 
 :root {
-  /* Colors - Primary Palette */
-  --color-primary: #5A9C8E;
-  --color-primary-light: #7FBFB2;
-  --color-secondary: #2C4A5A;
-  --color-neutral: #E8E4DC;
-  --color-neutral-light: #F5F3EE;
-  --color-accent: #89CFF0;
+  /* Colors - Warm Earth & Ocean Palette */
+  --color-primary: #1A7B7B;
+  --color-primary-light: #2D9B9B;
+  --color-primary-dark: #0F5252;
+  --color-secondary: #C85A3F;
+  --color-secondary-light: #D97B63;
+  --color-neutral: #E7DACB;
+  --color-neutral-light: #F4EDE3;
+  --color-neutral-dark: #A89580;
+  --color-accent: #E6A656;
+  --color-accent-bright: #F5C77A;
 
   /* Semantic Colors */
-  --color-background: #FFFFFF;
-  --color-foreground: #2C4A5A;
-  --color-text-light: #6B7280;
+  --color-background: #FAF8F5;
+  --color-foreground: #2B3A3A;
+  --color-text-light: #6B5D52;
+  --color-text-muted: #8A7C71;
 
   /* Spacing */
   --spacing-section: 4rem;
@@ -24,8 +29,8 @@
   --spacing-xl: 3rem;
 
   /* Typography */
-  --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-heading: var(--font-spectral), Georgia, serif;
+  --font-body: var(--font-karla), system-ui, sans-serif;
 
   /* Font Sizes */
   --text-xs: 0.75rem;
