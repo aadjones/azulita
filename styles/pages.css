@@ -3,32 +3,52 @@
 @layer components {
   /* Hero Section */
   .hero-section {
-    background:
-      radial-gradient(ellipse at top right, rgba(230, 166, 86, 0.15), transparent 50%),
-      radial-gradient(ellipse at bottom left, rgba(26, 123, 123, 0.12), transparent 50%),
-      radial-gradient(circle at 50% 0%, rgba(200, 90, 63, 0.08), transparent 60%),
-      linear-gradient(135deg, #FAF8F5 0%, #F4EDE3 100%);
-    padding: 5rem 0 8rem;
+    background: radial-gradient(
+        ellipse at top right,
+        rgba(230, 166, 86, 0.15),
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse at bottom left,
+        rgba(26, 123, 123, 0.12),
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 50% 0%,
+        rgba(200, 90, 63, 0.08),
+        transparent 60%
+      ),
+      linear-gradient(135deg, #faf8f5 0%, #f4ede3 100%);
+    padding: 2.5rem 0 8rem;
     text-align: center;
     position: relative;
   }
 
   .hero-section::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-image:
-      repeating-linear-gradient(90deg, rgba(26, 123, 123, 0.02) 0px, transparent 2px, transparent 40px),
-      repeating-linear-gradient(0deg, rgba(26, 123, 123, 0.02) 0px, transparent 2px, transparent 40px);
+    background-image: repeating-linear-gradient(
+        90deg,
+        rgba(26, 123, 123, 0.02) 0px,
+        transparent 2px,
+        transparent 40px
+      ),
+      repeating-linear-gradient(
+        0deg,
+        rgba(26, 123, 123, 0.02) 0px,
+        transparent 2px,
+        transparent 40px
+      );
     pointer-events: none;
   }
 
   @media (min-width: 768px) {
     .hero-section {
-      padding: 8rem 0 10rem;
+      padding: 4rem 0 10rem;
     }
   }
 
@@ -73,25 +93,41 @@
 
   /* Page Header */
   .page-header {
-    background:
-      radial-gradient(ellipse at top, rgba(230, 166, 86, 0.12), transparent 50%),
-      radial-gradient(circle at bottom right, rgba(26, 123, 123, 0.1), transparent 50%),
-      linear-gradient(135deg, #FAF8F5 0%, #F4EDE3 100%);
+    background: radial-gradient(
+        ellipse at top,
+        rgba(230, 166, 86, 0.12),
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at bottom right,
+        rgba(26, 123, 123, 0.1),
+        transparent 50%
+      ),
+      linear-gradient(135deg, #faf8f5 0%, #f4ede3 100%);
     padding: 4rem 0 6rem;
     text-align: center;
     position: relative;
   }
 
   .page-header::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-image:
-      repeating-linear-gradient(90deg, rgba(26, 123, 123, 0.02) 0px, transparent 2px, transparent 40px),
-      repeating-linear-gradient(0deg, rgba(26, 123, 123, 0.02) 0px, transparent 2px, transparent 40px);
+    background-image: repeating-linear-gradient(
+        90deg,
+        rgba(26, 123, 123, 0.02) 0px,
+        transparent 2px,
+        transparent 40px
+      ),
+      repeating-linear-gradient(
+        0deg,
+        rgba(26, 123, 123, 0.02) 0px,
+        transparent 2px,
+        transparent 40px
+      );
     pointer-events: none;
   }
 
@@ -102,9 +138,12 @@
   }
 
   .page-header-compact {
-    background:
-      radial-gradient(ellipse at top, rgba(230, 166, 86, 0.1), transparent 50%),
-      linear-gradient(135deg, #FAF8F5 0%, #F4EDE3 100%);
+    background: radial-gradient(
+        ellipse at top,
+        rgba(230, 166, 86, 0.1),
+        transparent 50%
+      ),
+      linear-gradient(135deg, #faf8f5 0%, #f4ede3 100%);
     padding: 3rem 0 2rem;
     text-align: center;
     position: relative;

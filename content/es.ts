@@ -52,7 +52,8 @@ export const es: ContentStructure = {
   },
   services: {
     title: "Servicios",
-    intro: "Los precios por servicios son ajustables a tu presupuesto. Estoy aquí para ayudarte.",
+    intro:
+      "Los precios por servicios son ajustables a tu presupuesto. Estoy aquí para ayudarte.",
     freeConsultation: "Agenda tu consulta inicial gratuita (25 min).",
     services: [
       {
@@ -75,7 +76,7 @@ export const es: ContentStructure = {
           "En estas sesiones nos enfocaremos en tus metas personales. Incorporando técnicas de ejercicio, yoga, respiración, meditación, trabajo energético y otras herramientas, puedo ayudarte a desarrollar recursos emocionales y a establecer rutinas que te conduzcan a un mayor bienestar y equilibrio.",
       },
     ],
-    closingText: "Agenda tu consulta inicial gratuita (25 min). Platiquemos para determinar cómo te puedo servir mejor.",
+    closingText: "Platiquemos para determinar cómo te puedo servir mejor.",
   },
   footer: {
     contact: {
