@@ -68,13 +68,13 @@
   --color-accent-rgb: 230, 166, 86;   /* RGB version for transparent effects */
   --color-accent-bright: #F5C77A;     /* Bright gold for emphasis */
 
-  /* Navigation Bar Gradient (Subtle Teal/Ocean) - Independent navbar colors */
-  --color-nav-start: #1A8080;         /* Gradient start - soft teal */
-  --color-nav-start-rgb: 26, 128, 128; /* RGB version for transparent effects */
-  --color-nav-mid: #1A7B7B;           /* Gradient middle - deeper teal */
+  /* Navigation Bar Gradient (Prominent Teal/Ocean) - Independent navbar colors */
+  --color-nav-start: #0F5252;         /* Gradient start - dark teal */
+  --color-nav-start-rgb: 15, 82, 82;  /* RGB version for transparent effects */
+  --color-nav-mid: #1A7B7B;           /* Gradient middle - medium teal */
   --color-nav-mid-rgb: 26, 123, 123;  /* RGB version for transparent effects */
-  --color-nav-end: #178585;           /* Gradient end - lighter teal */
-  --color-nav-end-rgb: 23, 133, 133;  /* RGB version for transparent effects */
+  --color-nav-end: #2D9B9B;           /* Gradient end - bright teal */
+  --color-nav-end-rgb: 45, 155, 155;  /* RGB version for transparent effects */
 
   /* Brand Title Color (Blue) - Matches butterfly logo */
   --color-brand-blue: #123e6e;        /* Deep blue for brand title */
