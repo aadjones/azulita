@@ -24,11 +24,16 @@ export function Hero() {
             height={80}
             className="h-16 w-auto md:h-20 animate-float"
           />
-          <h1 className="hero-title !mb-0">{content.home.hero.title}</h1>
+          <h1 className="hero-title !mb-0" style={{ color: 'var(--color-brand-blue)' }}>
+            {content.home.hero.title}
+          </h1>
         </div>
 
         {/* Services Tagline - PROMINENT */}
-        <p className="text-xl md:text-2xl lg:text-3xl font-semibold text-primary mb-4 md:mb-5 animate-fade-in-up animation-delay-200">
+        <p
+          className="text-xl md:text-2xl lg:text-3xl font-semibold mb-4 md:mb-5 animate-fade-in-up animation-delay-200"
+          style={{ color: 'var(--color-brand-blue)' }}
+        >
           {content.home.hero.tagline}
         </p>
 

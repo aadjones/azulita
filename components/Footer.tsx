@@ -6,7 +6,7 @@ export function Footer() {
   const { content } = useLanguage();
 
   return (
-    <footer className="bg-secondary text-white py-12 md:py-16">
+    <footer className="text-white py-12 md:py-16" style={{ backgroundColor: 'var(--color-footer-bg)' }}>
       <div className="container-custom">
         {/* Contact Info - Centered */}
         <div className="flex flex-col items-center text-center mb-8">
