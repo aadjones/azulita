@@ -19,7 +19,7 @@
         transparent 60%
       ),
       linear-gradient(135deg, var(--color-background) 0%, var(--color-neutral-light) 100%);
-    padding: 2.5rem 0 8rem;
+    padding: 1rem 0 8rem; /* top padding reduced to move title up closer to navbar */
     text-align: center;
     position: relative;
   }
@@ -48,7 +48,7 @@
 
   @media (min-width: 768px) {
     .hero-section {
-      padding: 4rem 0 10rem;
+      padding: 2rem 0 10rem; /* desktop: slightly more top padding than mobile */
     }
   }
 
