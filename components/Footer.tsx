@@ -6,14 +6,17 @@ export function Footer() {
   const { content } = useLanguage();
 
   return (
-    <footer className="text-white py-12 md:py-16" style={{ backgroundColor: 'var(--color-footer-bg)' }}>
+    // py-6/py-8: compact vertical padding for tighter footer
+    <footer className="text-white py-6 md:py-8" style={{ backgroundColor: 'var(--color-footer-bg)' }}>
       <div className="container-custom">
-        {/* Contact Info - Centered */}
-        <div className="flex flex-col items-center text-center mb-8">
-          <h3 className="text-xl md:text-2xl font-semibold mb-4">
+        {/* Contact Info - mb-4: space before copyright divider */}
+        <div className="flex flex-col items-center text-center mb-4">
+          {/* mb-2: tight spacing between heading and contact links */}
+          <h3 className="text-xl md:text-2xl font-semibold mb-2">
             {content.footer.contact.title}
           </h3>
-          <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center">
+          {/* gap-2/gap-6: tight vertical stack on mobile, wider horizontal gap on desktop */}
+            <div className="flex flex-col md:flex-row gap-2 md:gap-6 items-center">
             <a
               href={`mailto:${content.footer.contact.email}`}
               className="inline-flex items-center gap-2 text-base hover:text-primary-light transition-colors duration-200"
@@ -58,8 +61,8 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="border-t border-white/20 pt-6 text-center text-sm text-neutral-light">
+        {/* Copyright - pt-4: compact padding above copyright line */}
+        <div className="border-t border-white/20 pt-4 text-center text-sm text-neutral-light">
           <p>{content.footer.copyright}</p>
         </div>
       </div>
