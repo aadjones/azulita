@@ -15,34 +15,41 @@ export function Hero() {
   return (
     <section className="hero-section">
       <div className="container-custom">
-        {/* Logo and Title Group */}
-        <div className="flex items-center justify-center gap-0 mb-5 md:mb-6 animate-fade-in-up">
+        {/* Logo and Title Group
+            - mb-0: no margin below, tagline pulls up with negative margin */}
+        <div className="flex items-center justify-center gap-0 mb-0 animate-fade-in-up">
           <Image
             src="/images/azulita.png"
             alt="Azulita butterfly logo"
             width={80}
             height={80}
-            className="h-16 w-auto md:h-20 animate-float"
+            className="h-16 md:h-20 animate-float"
+            style={{ width: "auto" }}
           />
           <h1 className="hero-title !mb-0" style={{ color: 'var(--color-brand-blue)' }}>
             {content.home.hero.title}
           </h1>
         </div>
 
-        {/* Services Tagline - PROMINENT */}
+        {/* Services Tagline (Homeopathy · Holistic Coaching · Reiki)
+            - text-[1.2rem] etc: custom font sizes between Tailwind steps
+            - -mt-1 md:-mt-2: pulls tagline up close to butterfly
+            - mb-4 md:mb-5: spacing before subtitle */}
         <p
-          className="text-xl md:text-2xl lg:text-3xl font-semibold mb-4 md:mb-5 animate-fade-in-up animation-delay-200"
+          className="text-[1.2rem] md:text-[1.4rem] lg:text-[1.65rem] font-semibold -mt-1 md:-mt-2 mb-4 md:mb-5 animate-fade-in-up animation-delay-200"
           style={{ color: 'var(--color-brand-blue)' }}
         >
           {content.home.hero.tagline}
         </p>
 
-        {/* Subtitle - Value Proposition */}
-        <p className="hero-subtitle !mb-8 md:!mb-10 animate-fade-in-up animation-delay-300">
+        {/* Subtitle - Value Proposition
+            - !mb-4 md:!mb-5: matches tagline spacing above for visual consistency */}
+        <p className="hero-subtitle !mb-4 md:!mb-5 animate-fade-in-up animation-delay-300">
           {content.home.hero.subtitle}
         </p>
 
-        {/* Primary CTA Group - Tightly coupled */}
+        {/* Primary CTA Group
+            - cta-group-primary has gap: 0.4rem (in components.css) for tight button spacing */}
         <div className="cta-group-primary text-center animate-scale-in animation-delay-400">
           <p className="cta-text">{content.home.hero.freeConsultation}</p>
 
@@ -55,13 +62,16 @@ export function Hero() {
             {content.home.hero.cta}
           </a>
 
-          <p className="cta-text-secondary">
+          {/* -mt-px: 1px nudge up to visually balance spacing around button */}
+          <p className="cta-text-secondary -mt-px">
             {content.home.hero.callToAction}
           </p>
         </div>
 
-        {/* Secondary CTA Group - Clear separation from primary */}
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mt-8 md:mt-10 pt-6 md:pt-8 border-t border-neutral/30 animate-fade-in animation-delay-600">
+        {/* Secondary CTA Group (Services / About buttons)
+            - mt-4 md:mt-5: space above border line
+            - pt-3 md:pt-4: space below border line */}
+        <div className="flex flex-row gap-4 justify-center mt-4 md:mt-5 pt-3 md:pt-4 border-t border-neutral/30 animate-fade-in animation-delay-600">
           <Link
             href={getLocalizedPath("/services")}
             className="btn-secondary inline-block min-w-[140px]"
