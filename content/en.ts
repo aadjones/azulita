@@ -9,7 +9,7 @@ export const en: ContentStructure = {
   home: {
     hero: {
       title: "Azulita Holistics",
-      tagline: "Homeopathy · Reiki · Holistic Coaching",
+      tagline: "Homeopathy · Holistic Coaching · Reiki",
       subtitle:
         "I'm here to accompany you on your healing journey and your development toward greater wellbeing.",
       freeConsultation: "Free initial consultation (25 min)",
