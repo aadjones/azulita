@@ -1,5 +1,5 @@
 // Language type
-export type Language = 'en' | 'es';
+export type Language = "en" | "es";
 
 // Navigation content
 export interface NavContent {
@@ -35,6 +35,7 @@ export interface AboutContent {
   title: string;
   freeConsultation: string;
   bio: string[];
+  contact: string;
 }
 
 // Services page content

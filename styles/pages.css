@@ -18,7 +18,11 @@
         rgba(var(--color-secondary-rgb), var(--opacity-subtle)),
         transparent 60%
       ),
-      linear-gradient(135deg, var(--color-background) 0%, var(--color-neutral-light) 100%);
+      linear-gradient(
+        135deg,
+        var(--color-background) 0%,
+        var(--color-neutral-light) 100%
+      );
   }
 
   /* Hero Section */
@@ -114,9 +118,10 @@
     font-size: 2.5rem;
     font-weight: 700;
     color: var(--color-primary-dark);
-    margin-bottom: 0.5rem;
+    margin: 0 0 0.5rem 0; /* <-- add this */
     font-family: var(--font-heading);
     letter-spacing: -0.02em;
+    line-height: 1.1; /* optional but often helps visually */
   }
 
   @media (min-width: 768px) {
