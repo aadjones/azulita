@@ -21,7 +21,7 @@ export function Layout({ children }: LayoutProps) {
       </a>
       <Navigation />
       <LanguageBanner />
-      <main id="main-content" className="flex-grow">
+      <main id="main-content" className="flex-grow main-background">
         {children}
       </main>
       <Footer />

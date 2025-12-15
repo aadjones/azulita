@@ -36,7 +36,7 @@ export const es: ContentStructure = {
   },
   about: {
     title: "Sobre Mí",
-    freeConsultation: "Agenda tu consulta inicial gratuita (25 min)",
+    freeConsultation: "Consulta inicial gratuita (25 min)",
     bio: [
       "¡Hola! Soy Anakaren Santana. A través de los años me he preparado en diversas áreas: pedagogía, instrucción en yoga y meditación, reiki, técnicas terapéuticas, arte y meditación, e incluso matemáticas y física teóricas. ¡Y sigo estudiando! Ahora estoy en el proceso de certificarme como homeópata. Me apasiona buscar entender la naturaleza de la vida, nuestro mundo interior y cómo encajamos en el mundo que nos rodea.",
       "Además de mis propias exploraciones y estudios, me apasiona compartir mis conocimientos, enseñar y acompañar a otros en su proceso de desarrollo y aprendizaje. Por muchos años me he dedicado a crear experiencias y materiales educativos en diversas áreas. Este trabajo ha sido principalmente en temas académicos, como matemáticas, pero me ha permitido profundizar en cómo aprenden y se desarrollan las personas. Sobre todo, me ha enseñado que cada persona es un mundo de experiencias, anhelos, necesidades, sensaciones, todas cambiantes día a día y, por lo tanto, con su manera muy individual de crecer y evolucionar.",
@@ -48,7 +48,7 @@ export const es: ContentStructure = {
     title: "Servicios",
     intro:
       "Los precios por servicios son ajustables a tu presupuesto. Estoy aquí para ayudarte.",
-    freeConsultation: "Agenda tu consulta inicial gratuita (25 min).",
+    freeConsultation: "Consulta inicial gratuita (25 min).",
     services: [
       {
         title: "Homeopatía",

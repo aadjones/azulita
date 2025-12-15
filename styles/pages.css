@@ -1,8 +1,8 @@
 /* Page-specific layout classes */
 
 @layer components {
-  /* Hero Section */
-  .hero-section {
+  /* Main Background - soft earth gradient for all pages */
+  .main-background {
     background: radial-gradient(
         ellipse at top right,
         rgba(var(--color-accent-rgb), var(--opacity-medium)),
@@ -19,6 +19,10 @@
         transparent 60%
       ),
       linear-gradient(135deg, var(--color-background) 0%, var(--color-neutral-light) 100%);
+  }
+
+  /* Hero Section */
+  .hero-section {
     /* bottom padding controls gap between CTA buttons and footer */
     padding: 1rem 0 4rem;
     text-align: center;
@@ -95,20 +99,14 @@
 
   /* Page Header */
   .page-header-compact {
-    background: radial-gradient(
-        ellipse at top,
-        rgba(var(--color-accent-rgb), var(--opacity-soft)),
-        transparent 50%
-      ),
-      linear-gradient(135deg, var(--color-background) 0%, var(--color-neutral-light) 100%);
-    padding: 3rem 0 2rem;
+    padding: 2rem 0 0.5rem;
     text-align: center;
     position: relative;
   }
 
   @media (min-width: 768px) {
     .page-header-compact {
-      padding: 4rem 0 3rem;
+      padding: 2rem 0 0.75rem;
     }
   }
 
@@ -116,7 +114,7 @@
     font-size: 2.5rem;
     font-weight: 700;
     color: var(--color-primary-dark);
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     font-family: var(--font-heading);
     letter-spacing: -0.02em;
   }
@@ -145,7 +143,7 @@
 
   /* Section Spacing */
   .section-spacing {
-    padding-top: var(--spacing-section);
+    padding-top: 2rem;
     padding-bottom: var(--spacing-section);
   }
 

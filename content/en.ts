@@ -36,7 +36,7 @@ export const en: ContentStructure = {
   },
   about: {
     title: "About Me",
-    freeConsultation: "Schedule your free initial consultation (25 min)",
+    freeConsultation: "Free initial consultation (25 min)",
     bio: [
       "Hello! I'm Anakaren Santana. Over the years, I have trained in various areas: pedagogy, yoga and meditation instruction, reiki, therapeutic techniques, art and meditation, and even theoretical mathematics and physics. And I'm still studying! I'm currently in the process of becoming a certified homeopath. I'm passionate about seeking to understand the nature of life, our inner world, and how we fit into the world around us.",
       "In addition to my own explorations and studies, I'm passionate about sharing my knowledge, teaching, and accompanying others in their process of development and learning. For many years, I have dedicated myself to creating educational experiences and materials in various areas. This work has been primarily in academic subjects, such as mathematics, but it has allowed me to deepen my understanding of how people learn and develop. Above all, it has taught me that each person is a world of experiences, desires, needs, sensations—all changing day by day—and therefore, with their own very individual way of growing and evolving.",
@@ -48,7 +48,7 @@ export const en: ContentStructure = {
     title: "Services",
     intro:
       "Pricing for services is adjustable to your budget. I'm here to help you.",
-    freeConsultation: "Schedule your free initial consultation (25 min).",
+    freeConsultation: "Free initial consultation (25 min).",
     services: [
       {
         title: "Homeopathy",

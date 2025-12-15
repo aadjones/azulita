@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useLanguage } from '@/lib/i18n/useLanguage';
-import { BOOKING_URL } from '@/lib/constants';
+import { useLanguage } from "@/lib/i18n/useLanguage";
+import { BOOKING_URL } from "@/lib/constants";
 
 export default function ServicesPage() {
   const { content } = useLanguage();
@@ -45,9 +45,7 @@ export default function ServicesPage() {
 
           {/* Secondary CTA Group - Text above and below button */}
           <div className="cta-group-primary text-center">
-            <p className="cta-text">
-              {content.services.freeConsultation}
-            </p>
+            <p className="cta-text">{content.services.freeConsultation}</p>
 
             <a
               href={BOOKING_URL}
@@ -58,7 +56,7 @@ export default function ServicesPage() {
               {content.home.hero.cta}
             </a>
 
-            <p className="cta-text-secondary mt-3">
+            <p className="cta-text-secondary -mt-px">
               {content.services.closingText}
             </p>
           </div>
