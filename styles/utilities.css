@@ -1,11 +1,3 @@
-/* Utility classes */
-
-@layer components {
-  .text-center {
-    text-align: center;
-  }
-}
-
 /* Animations */
 @keyframes fadeInUp {
   from {

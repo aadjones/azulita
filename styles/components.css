@@ -47,7 +47,7 @@
   }
 
   .btn-primary-enhanced {
-    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-light) 100%);
+    background: var(--color-secondary);
     color: white;
     padding: 1rem 2rem;
     border-radius: var(--radius-lg);
