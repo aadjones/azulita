@@ -15,7 +15,9 @@ export function Navigation() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 backdrop-blur-md bg-gradient-to-r from-primary/95 via-primary-dark/95 to-secondary/95 text-white shadow-lg">
+    <nav className="sticky top-0 z-50 backdrop-blur-md text-white shadow-lg" style={{
+      background: `linear-gradient(to right, rgba(var(--color-nav-start-rgb), 0.95), rgba(var(--color-nav-mid-rgb), 0.95), rgba(var(--color-nav-end-rgb), 0.95))`
+    }}>
       <div className="container-custom">
         <div className="flex items-center justify-between h-16">
           {/* Language Toggle */}

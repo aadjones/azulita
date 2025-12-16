@@ -15,11 +15,13 @@ styles/
 ```
 
 **To add new styles:**
+
 - Buttons/Cards/CTAs → `components.css`
 - Page-specific layouts → `pages.css`
 - Base HTML styling → `base.css`
 
 This organization means:
+
 - ✅ Find button styles instantly in `components.css`
 - ✅ No more hunting through 450+ line files
 - ✅ Easy to onboard new developers
@@ -30,20 +32,23 @@ This organization means:
 To maintain consistent styling across the site, use these semantic class names instead of inline Tailwind utilities.
 
 ### Primary CTA Group
+
 Use when you want to tightly couple text with a call-to-action button (e.g., "Free consultation" + "Book Now")
 
 ```html
 <div class="cta-group-primary text-center">
-  <p class="cta-text">Schedule your free initial consultation (25 min).</p>
+  <p class="cta-text">Schedule your free initial consultation (20 min)</p>
   <a href="..." class="btn-primary-enhanced">BOOK YOUR CONSULTATION</a>
 </div>
 ```
 
 **Styling:**
+
 - Tight spacing (0.75rem gap) between text and button
 - Bottom margin: 3rem (mobile), 4rem (desktop)
 
 ### Secondary CTA Group
+
 Use for lower-priority CTAs that appear later on the page
 
 ```html
@@ -54,6 +59,7 @@ Use for lower-priority CTAs that appear later on the page
 ```
 
 **Styling:**
+
 - Looser spacing (1rem gap) between text and button
 - Top border separator for visual distinction
 - Top margin: 4rem (mobile), 5rem (desktop)
@@ -61,6 +67,7 @@ Use for lower-priority CTAs that appear later on the page
 ### Buttons
 
 #### `.btn-primary-enhanced`
+
 Enhanced primary button with shadow effects
 
 ```html
@@ -68,12 +75,14 @@ Enhanced primary button with shadow effects
 ```
 
 **Styling:**
+
 - Larger padding (1rem vertical, 2rem horizontal)
 - Font weight: 600
 - Shadow on normal state, larger shadow on hover
 - Responsive font size: 1rem → 1.125rem
 
 #### `.btn-secondary`
+
 Outlined button for secondary actions
 
 ```html
@@ -83,14 +92,17 @@ Outlined button for secondary actions
 ### Text Styles
 
 #### `.cta-text`
+
 Primary CTA descriptive text (darker, medium weight)
 
 #### `.cta-text-secondary`
+
 Secondary CTA descriptive text (lighter)
 
 ### Page Headers
 
 #### `.page-header-compact`
+
 Compact page header with gradient background
 
 ```html
@@ -103,6 +115,7 @@ Compact page header with gradient background
 ```
 
 **Styling:**
+
 - Gradient background
 - Padding: 3rem top, 2rem bottom (mobile)
 - Padding: 4rem top, 3rem bottom (desktop)
@@ -110,15 +123,19 @@ Compact page header with gradient background
 ## Maintenance Guidelines
 
 ### To change CTA button styling site-wide:
+
 Edit `.btn-primary-enhanced` in `/styles/components.css`
 
 ### To adjust spacing between CTA text and buttons:
+
 Edit `.cta-group-primary` gap property in `/styles/components.css`
 
 ### To change CTA text color/size:
+
 Edit `.cta-text` or `.cta-text-secondary` in `/styles/components.css`
 
 ### To modify page headers or hero sections:
+
 Edit classes in `/styles/pages.css`
 
 ## Files Using These Classes

@@ -1,5 +1,5 @@
 // Language type
-export type Language = 'en' | 'es';
+export type Language = "en" | "es";
 
 // Navigation content
 export interface NavContent {
@@ -22,18 +22,12 @@ export interface HeroContent {
 export interface ServiceItem {
   title: string;
   description: string;
-  icon?: string;
 }
 
 // Home page content
 export interface HomeContent {
   hero: HeroContent;
   services: ServiceItem[];
-  bookingCta: {
-    title: string;
-    description: string;
-    buttonText: string;
-  };
 }
 
 // About page content
@@ -41,6 +35,7 @@ export interface AboutContent {
   title: string;
   freeConsultation: string;
   bio: string[];
+  contact: string;
 }
 
 // Services page content

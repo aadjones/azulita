@@ -2,7 +2,6 @@
 
 import { useLanguageContext } from './LanguageContext';
 import { getContent } from '@/content';
-import type { Language } from './types';
 
 export function useLanguage() {
   const { language, setLanguage } = useLanguageContext();
@@ -33,12 +32,4 @@ export function useLanguage() {
     content,
     t,
   };
-}
-
-// Hook to get current language from URL path
-export function useLanguageFromPath(): Language {
-  if (typeof window === 'undefined') return 'en';
-
-  const path = window.location.pathname;
-  return path.startsWith('/es') ? 'es' : 'en';
 }
