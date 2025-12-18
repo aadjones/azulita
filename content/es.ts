@@ -16,23 +16,6 @@ export const es: ContentStructure = {
       cta: "AGENDA TU CONSULTA",
       callToAction: "Platiquemos para determinar cómo te puedo ayudar.",
     },
-    services: [
-      {
-        title: "Homeopatía",
-        description:
-          "Remedios naturales y suaves adaptados a tu constitución única y necesidades de salud.",
-      },
-      {
-        title: "Reiki",
-        description:
-          "Sanación energética para promover relajación profunda, reducir el estrés y apoyar la curación natural de tu cuerpo.",
-      },
-      {
-        title: "Bienestar Holístico",
-        description:
-          "Enfoque integral de la salud que aborda mente, cuerpo y espíritu en armonía.",
-      },
-    ],
   },
   about: {
     title: "Sobre Mí",
@@ -79,6 +62,6 @@ export const es: ContentStructure = {
       email: "azulitaholistics@gmail.com",
       instagram: "@azulitaholistics",
     },
-    copyright: "© 2025 Azulita Holistics. Todos los derechos reservados.",
+    copyright: "© 2026 Azulita Holistics. Todos los derechos reservados.",
   },
 };

@@ -18,16 +18,9 @@ export interface HeroContent {
   callToAction: string;
 }
 
-// Service item
-export interface ServiceItem {
-  title: string;
-  description: string;
-}
-
 // Home page content
 export interface HomeContent {
   hero: HeroContent;
-  services: ServiceItem[];
 }
 
 // About page content

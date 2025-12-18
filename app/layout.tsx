@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   description: "Professional homeopathy, reiki, and holistic healing services",
   icons: {
-    icon: "/",
+    icon: "/azulita.svg",
     apple: "/azulita.svg",
   },
   verification: {
