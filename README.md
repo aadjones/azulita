@@ -2,6 +2,8 @@
 
 A bilingual (English/Spanish) website for a holistic healing practice.
 
+Note: This repository is archived as of 2026. Future updates are maintained at https://github.com/azulitaholistics/azulita.
+
 ## Documentation
 
 📝 **[How to Edit Website Copy](./docs/EDITING_COPY.md)** - Change text on any page
